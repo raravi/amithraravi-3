@@ -14,7 +14,7 @@ module.exports = {
       options: {
         postCssPlugins: [
           postcssPresetEnv({
-            importFrom: 'src/components/layout.css',
+            importFrom: 'src/styles/app.css',
             stage: 1,
             features: {
               'custom-properties': true,
@@ -24,6 +24,7 @@ module.exports = {
         ],
       },
     },
+    'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-plugin-eslint',
       options: {

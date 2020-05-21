@@ -10,7 +10,8 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Header from './header';
-import './layout.css';
+import '../styles/app.css';
+import styles from '../styles/layout.module.css';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -27,7 +28,7 @@ const Layout = ({ children }) => {
     <>
       <Header siteUrl={data.site.siteMetadata.siteUrl} />
       <div
-        className="container"
+        className={styles.container}
       >
         <main>{children}</main>
         <footer>

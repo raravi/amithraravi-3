@@ -1,7 +1,7 @@
 // import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-import style from './header.module.css';
+import style from '../styles/header.module.css';
 
 const Header = ({ siteUrl }) => (
   <header className={style.topMenu}>
