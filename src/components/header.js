@@ -29,9 +29,9 @@ const Header = ({ siteUrl }) => (
           </li>
         </ul>
       </nav>
+      <div className="div-20-high" />
+      <div className="line-red" />
     </div>
-    <div className="div-20-high inner-wrap" />
-    <div className="line-red inner-wrap" />
   </header>
 );
 

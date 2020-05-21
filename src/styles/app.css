@@ -138,9 +138,20 @@ body {
   font-family: var(--base-font);
   font-size: 16px;
   color: var(--text-color);
-	line-height: 1.4em;
+  line-height: 1.4em;
 }
 
 :focus {
 	outline: 0;
+}
+
+.div-20-high {
+  height: 20px;
+  width: 100%;
+}
+
+.line-red {
+  height: 7px;
+  width: 100%;
+  background-color: var(--red);
 }
