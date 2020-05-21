@@ -1,10 +1,29 @@
+const postcssPresetEnv = require('postcss-preset-env');
+const site = require('./config/site');
+
 module.exports = {
   siteMetadata: {
+    siteUrl: `${site.siteUrl}`,
     title: 'Amith Raravi',
     description: 'Reader. Coder. Play a bit of chess, a movie here, a road-trip there :)',
     author: '@amith_raravi',
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-postcss',
+      options: {
+        postCssPlugins: [
+          postcssPresetEnv({
+            importFrom: 'src/components/layout.css',
+            stage: 1,
+            features: {
+              'custom-properties': true,
+              'custom-media-queries': true,
+            },
+          }),
+        ],
+      },
+    },
     {
       resolve: 'gatsby-plugin-eslint',
       options: {
