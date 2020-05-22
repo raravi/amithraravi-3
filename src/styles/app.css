@@ -205,6 +205,9 @@
 	outline: 0;
 }
 
+/**
+ * Global Classes
+ */
 .inner-wrap {
   max-width: var(--max-width);
   margin: 0 auto;
