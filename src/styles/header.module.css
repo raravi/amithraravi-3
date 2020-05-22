@@ -101,7 +101,6 @@
   padding: var(--masthead-height-onefourth) var(--gutter-onetenth) var(--masthead-height-onefourth);
   margin-left: 0px;
   margin-right: 0px;
-  text-decoration: none;
   color: var(--black);
   font-family: var(--site-title-font);
   font-weight: 600;
@@ -155,7 +154,6 @@
   /* line hover effect */
   position: relative;
   display: none;
-  text-decoration: none;
   margin: 0 var(--gutter-half);
   padding: var(--masthead-height-onefourth) 0 var(--masthead-height-onefourth);
   /* opacity: 0; */

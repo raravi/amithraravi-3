@@ -59,6 +59,29 @@
 }
 /* latin-ext */
 @font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Raleway"), local("Raleway-Regular"),
+    url(/fonts/1Ptug8zYS_SKggPNyCMIT4ttDfCmxA.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  font-display: swap;
+}
+/* latin */
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Raleway"), local("Raleway-Regular"),
+    url(/fonts/1Ptug8zYS_SKggPNyC0IT4ttDfA.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+  font-display: swap;
+}
+/* latin-ext */
+@font-face {
   font-family: "Righteous";
   font-style: normal;
   font-weight: 400;
@@ -113,9 +136,16 @@
   --base-font: "Niramit", sans-serif;
   --heading-font: "Allerta", sans-serif;
   --alt-font: var(--heading-font);
+  --code-font: monospace;
+  --quoted-text-font: "Raleway", sans-serif;
 
-  --doc-font-size: 16;
-  --doc-line-height: 24;
+  --doc-font-size: 16px;
+  --doc-line-height: 24px;
+
+  --doc-line-height-oneandhalf: 36px;
+  --doc-line-height-half: 12px;
+  --doc-line-height-onethird: 8px;
+  --doc-line-height-onefourth: 6px;
 
   --white: #FFF;
   --black: hsl(0, 0%, 0%);
@@ -124,7 +154,19 @@
   --black-lighter-45: hsl(0, 0%, 45%);
   --red: hsl(0, 100%, 50%);
   --red-dark: hsl(0, 100%, 40%);
-  --text-color: #313130;
+  --boston-red: hsl(0, 100%, 40%);
+  --boston-red-light-5: hsl(0, 100%, 45%);
+
+  --text-color: hsl(60, 1%, 19%);
+  --caption-color: hsl(60, 0%, 39%);
+  --primary-color: var(--black);
+  --primary-color-light-95: hsl(0, 0%, 95%);
+  --primary-color-dark-5: hsl(0, 0%, 0%);
+  --info-color: #3498db;
+  --border-color: hsl(0, 0%, 87%);
+  --border-color-light-10: hsl(0, 0%, 97%);
+  --border-color-dark-10: hsl(0, 0%, 77%);
+  --link-underline-color: hsl(0, 0%, 64%);
 
   --gutter: 20px;
   --gutter-half: 10px;
@@ -136,6 +178,10 @@
   --masthead-height-onefourth: 15px;
 
   --max-width: 1088px;
+  --border-radius: 3px;
+  --column: 4.2358em;
+  --column-oneandhalf: 6.3537em;
+  --column-threefourth-negative: -3.17685em;
 }
 
 /**
@@ -153,14 +199,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-body {
-  font-family: var(--base-font);
-  font-size: 16px;
-  color: var(--text-color);
-  line-height: 1.5em;
-  margin-bottom: 24px;
 }
 
 :focus {
@@ -181,4 +219,386 @@ body {
   height: 7px;
   width: 100%;
   background-color: var(--red);
+}
+
+/**
+ * Typography
+ */
+
+body {
+  font-family: var(--base-font);
+  color: var(--text-color);
+  /* @include font-size(16); */
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+  overflow-x: hidden;
+}
+
+p {
+  /* @include font-size(18, yes, 28); */
+  font-size: 18px;
+  line-height: 28 / 18;
+  margin-bottom: 24px;
+}
+
+li {
+  /* @include font-size(16, 12, 24); */
+  font-size: 16px;
+  line-height: 24 / 16;
+  margin-bottom: 12px;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  /* Fix the character spacing for headings */
+  text-rendering: optimizeLegibility;
+}
+h1 {
+  /* @include font-size(36); */
+  font-size: 36px;
+  line-height: 2 * 24 / 36;
+  margin-bottom: 24px;
+}
+h2 {
+  /* @include font-size(32); */
+  font-size: 32px;
+  line-height: 2 * 24 / 32;
+  margin-bottom: 24px;
+}
+h3 {
+  /* @include font-size(28); */
+  font-size: 28px;
+  line-height: 2 * 24 / 28;
+  margin-bottom: 24px;
+}
+h4 {
+  /* @include font-size(24); */
+  font-size: 24px;
+  line-height: 1;
+  margin-bottom: 24px;
+}
+h5 {
+  /* @include font-size(20); */
+  font-size: 20px;
+  line-height: 1 * 24 / 20;
+  margin-bottom: 24px;
+}
+h6 {
+  /* @include font-size(18); */
+  font-size: 18px;
+  line-height: 1 * 24 / 18;
+  margin-bottom: 24px;
+}
+
+/* Underlined text */
+u,
+ins {
+  text-decoration: none;
+  border-bottom: 3px solid var(--red);
+}
+
+/* Links */
+a {
+  color: var(--boston-red-light-5);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link-underline-color);
+}
+a:hover {
+  color: var(--boston-red);
+  border-bottom: 1px solid var(--link-underline-color);
+}
+a:focus {
+  /* Default */
+  outline: thin dotted #333;
+  /* Webkit */
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+a:hover,
+a:focus {
+  outline: 0;
+}
+
+/* Quoted text */
+blockquote {
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+  border-left: 6px solid var(--info-color);
+}
+blockquote p {
+  font-family: var(--quoted-text-font);
+  font-style: italic;
+  /* @include font-size(16); */
+  font-size: 16px;
+  /* line-height: 1.5; */
+  margin-bottom: 24px;
+  line-height: 1.55;
+}
+blockquote cite {
+  font-family: var(--base-font);
+  font-weight: 700;
+  font-style: normal;
+  /* @include font-size(18); */
+  font-size: 18px;
+  line-height: 1 * 24 / 18;
+  margin-bottom: 24px;
+}
+
+/* Code */
+tt,
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--code-font);
+}
+pre {
+  /* add scrollbars to wide code blocks */
+  overflow-x: auto;
+}
+p code,
+li code {
+  /* @include font-size(16, no); */
+  font-size: 16px;
+  line-height: 24 / 16;
+  margin-bottom: 0; 
+  color: var(--text-color);
+  white-space: nowrap;
+  margin: 0 2px;
+  padding: 0 5px;
+  border: 1px solid var(--border-color);
+  background-color: var(--primary-color-light-95);
+  border-radius: var(--border-radius);
+}
+
+/*
+    Media and embeds
+    ========================================================================== */
+
+/* Figure captions */
+figcaption {
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+  font-family: var(--alt-font);
+  /* @include font-size(14, yes); */
+  font-size: 14px;
+  line-height: 1 * 24 / 14;
+  margin-bottom: 24px;
+  color: var(--caption-color);
+  /* clear: both; */
+}
+
+@media screen and (--small) {
+  figcaption {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+figcaption a {
+  color: var(--caption-color);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--caption-color);
+}
+
+figcaption a:hover {
+  border-bottom-style: solid;
+}
+
+/* Fix IE9 SVG bug */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/*
+    Horizontal rules
+    ========================================================================== */
+
+hr {
+  display: block;
+  position: relative;
+  margin: var(--doc-line-height-oneandhalf) 0;
+  padding: 0;
+  height: 1px;
+  border: 0;
+}
+hr::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: var(--column-threefourth-negative);
+  width: var(--column-oneandhalf);
+  height: 3px;
+  background: var(--red);
+}
+
+/*
+    Forms
+    ========================================================================== */
+
+fieldset {
+  background: var(--border-color-light-10);
+  border: 1px solid var(--border-color);
+  margin-bottom: var(--doc-line-height);
+  padding: var(--gutter);
+  border-radius: var(--border-radius);
+}
+
+input,
+label,
+select {
+  display: block;
+  /* @include font-size($form-font-size, no); */
+  font-size: 16px;
+  line-height: 24 / 16;
+  margin-bottom: 0;
+}
+
+label {
+  font-weight: bold;
+  font-family: var(--alt-font);
+  margin-bottom: var(--doc-line-height-onefourth);
+}
+label.required:after {
+  content: "*";
+}
+label abbr {
+  display: none;
+}
+
+textarea,
+/* #{$all-text-inputs}, */
+select,
+select[multiple="multiple"] {
+  box-sizing: border-box;
+  transition: border-color;
+  background-color: white;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.06);
+  font-family: var(--base-font);
+  font-size: var(--doc-font-size);
+  margin-bottom: var(--doc-line-height-half);
+  padding: var(--doc-line-height-onethird);
+  width: 100%;
+}
+
+textarea:hover,
+/* #{$all-text-inputs}, */
+select:hover,
+select[multiple="multiple"]:hover {
+  border-color: var(--border-color-dark-10);
+}
+textarea:focus,
+/* #{$all-text-inputs}, */
+select:focus,
+select[multiple="multiple"]:focus {
+  border-color: var(--primary-color);
+  box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.06),
+              0 0 5px rgba(#000, 0.7);
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type="search"] {
+  appearance: none;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+  margin-right: var(--doc-line-height-onefourth);
+}
+
+input[type="file"] {
+  width: 100%;
+}
+
+select {
+  width: auto;
+  max-width: 100%;
+  margin-bottom: var(--doc-line-height);
+}
+
+form button,
+input[type="submit"] {
+  /* @extend .btn; */
+  appearance: none;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/*
+    Navigation lists
+    ========================================================================== */
+
+/**
+  * Removes margins, padding, and bullet points from navigation lists
+  *
+  * Example usage:
+  * <nav>
+  *    <ul>
+  *      <li><a href="#link-1">Link 1</a></li>
+  *      <li><a href="#link-2">Link 2</a></li>
+  *      <li><a href="#link-3">Link 3</a></li>
+  *    </ul>
+  *  </nav>
+  */
+
+nav ul {
+    margin: 0;
+    padding: 0;
+  }
+nav li {
+  list-style: none;
+}
+nav a {
+  text-decoration: none;
+  border-bottom: none;
+}
+nav a:hover {
+  border-bottom: none;
+}
+
+
+/*
+    Global animation transition
+    ========================================================================== */
+
+b,
+i,
+strong,
+em,
+blockquote,
+p,
+q,
+span,
+figure,
+img,
+h1,
+h2,
+header,
+input,
+a,
+tr,
+td,
+.highlight {
+  transition:
+    color 0.2s ease-out,
+    opacity 0.2s ease-out,
+    background 0.2s ease-out,
+    border-color 0.2s ease-out;
 }

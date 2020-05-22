@@ -31,7 +31,6 @@
 .siteFooter_bottomMenu li a {
   position: relative;
   display: block;
-  text-decoration: none;
   margin-right: var(--gutter);
   padding: var(--masthead-height-onefourth) 0 var(--masthead-height-onefourth);
   height: var(--masthead-height);
@@ -70,8 +69,10 @@
 .siteFooter_copyright a {
   color: var(--black-lighter-15);
   text-decoration: none;
+  border-bottom: none;
 }
 
 .siteFooter_copyright a:hover {
   color: var(--red-dark);
+  border-bottom: none;
 }
