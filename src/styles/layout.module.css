@@ -1,3 +1,15 @@
 .container {
-  padding-top: 140px;
+  padding: 140px var(--gutter-half) 0;
+}
+
+@media screen and (--micro350) {
+  .container {
+    padding: 140px var(--gutter-threefourth) 0;
+  }
+}
+
+@media screen and (--small) {
+  .container {
+    padding: 140px var(--gutter) 0;
+  }
 }

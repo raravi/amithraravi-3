@@ -76,11 +76,6 @@
   }
 }
 
-.topMenu_innerWrap {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
 .topMenu_menu {
   display: flex;
   flex-direction: row;

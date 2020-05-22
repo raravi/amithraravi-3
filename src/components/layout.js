@@ -8,8 +8,8 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
-
 import Header from './header';
+import Footer from './footer';
 import '../styles/app.css';
 import styles from '../styles/layout.module.css';
 import stylesHeader from '../styles/header.module.css';
@@ -91,15 +91,10 @@ const Layout = ({ children }) => {
       <div
         className={styles.container}
       >
-        <main>{children}</main>
-        <footer>
-          ©
-          {' '}
-          {new Date().getFullYear()}
-          , Built with
-          {' '}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <div className="inner-wrap">
+          <main>{children}</main>
+          <Footer siteUrl={data.site.siteMetadata.siteUrl} />
+        </div>
       </div>
     </>
   );

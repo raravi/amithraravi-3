@@ -1,0 +1,77 @@
+/* Footer */
+.siteFooter {
+  margin-top: 72px;
+  font-family: var(--alt-font);
+}
+
+.siteFooter_bottomMenu {
+  font-family: var(--menu-font);
+}
+
+.siteFooter_bottomMenu::after {
+  content: "";
+  display:block;
+  clear: both;
+}
+
+.siteFooter_bottomMenu li {
+  display: block;
+  margin-bottom: 0px;
+  float: left;
+}
+
+@media (--medium750) {
+  /* remove extra spacing from last menu link */
+  .siteFooter_bottomMenu li:last-child a {
+    margin-right: 10px;
+  }
+}
+
+/* line hover effect */
+.siteFooter_bottomMenu li a {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  margin-right: var(--gutter);
+  padding: var(--masthead-height-onefourth) 0 var(--masthead-height-onefourth);
+  height: var(--masthead-height);
+  color: var(--black-lighter-35);
+}
+.siteFooter_bottomMenu li a::before,
+.siteFooter_bottomMenu li a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  transition: width 0.3s;
+}
+.siteFooter_bottomMenu li a::before {
+  width: 100%;
+  background: transparent;
+}
+.siteFooter_bottomMenu li a::after {
+  width: 0;
+  background: var(--red);
+}
+.siteFooter_bottomMenu li a:active::after,
+.siteFooter_bottomMenu li a:hover::after {
+  width: 100%;
+}
+
+/* Copyright text */
+.siteFooter_copyright {
+  font-size: 12px;
+  color: var(--black-lighter-45);
+  margin-top: 12px;
+}
+
+.siteFooter_copyright a {
+  color: var(--black-lighter-15);
+  text-decoration: none;
+}
+
+.siteFooter_copyright a:hover {
+  color: var(--red-dark);
+}

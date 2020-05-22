@@ -5,7 +5,7 @@ import style from '../styles/header.module.css';
 
 const Header = ({ siteUrl }) => (
   <header className={style.topMenu}>
-    <div className={style.topMenu_innerWrap}>
+    <div className="inner-wrap">
       <nav role="navigation">
         <ul className={style.topMenu_menu}>
           <li>

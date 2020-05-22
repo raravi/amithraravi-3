@@ -2,6 +2,18 @@
  * FONTS
  */
 
+/* latin */
+@font-face {
+  font-family: "Allerta";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Allerta Regular"), local("Allerta-Regular"),
+    url(/fonts/TwMO-IAHRlkbx940YnYXSCiN9uc.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+  font-display: swap;
+}
 /* thai */
 @font-face {
   font-family: "Niramit";
@@ -99,9 +111,17 @@
   --site-title-font: "Unica One", sans-serif;
   --menu-font: "Righteous", sans-serif;
   --base-font: "Niramit", sans-serif;
+  --heading-font: "Allerta", sans-serif;
+  --alt-font: var(--heading-font);
+
+  --doc-font-size: 16;
+  --doc-line-height: 24;
 
   --white: #FFF;
-  --black: #000;
+  --black: hsl(0, 0%, 0%);
+  --black-lighter-15: hsl(0, 0%, 15%);
+  --black-lighter-35: hsl(0, 0%, 35%);
+  --black-lighter-45: hsl(0, 0%, 45%);
   --red: hsl(0, 100%, 50%);
   --red-dark: hsl(0, 100%, 40%);
   --text-color: #313130;
@@ -123,6 +143,7 @@
  */
 @custom-media --micro350 (min-width: 350px);
 @custom-media --small (min-width: 600px);
+@custom-media --medium750 (min-width: 750px);
 @custom-media --medium (min-width: 900px);
 
 /**
@@ -138,11 +159,17 @@ body {
   font-family: var(--base-font);
   font-size: 16px;
   color: var(--text-color);
-  line-height: 1.4em;
+  line-height: 1.5em;
+  margin-bottom: 24px;
 }
 
 :focus {
 	outline: 0;
+}
+
+.inner-wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 .div-20-high {
