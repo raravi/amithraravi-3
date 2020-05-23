@@ -13,6 +13,7 @@
     "gatsby-plugin-postcss": "^2.3.2",
     "gatsby-plugin-react-helmet": "^3.3.1",
     "gatsby-plugin-sharp": "^2.6.4",
+    "gatsby-plugin-twitter": "^2.3.2",
     "gatsby-remark-prismjs": "^3.5.2",
     "gatsby-remark-source-name": "^1.0.0",
     "gatsby-source-filesystem": "^2.3.8",

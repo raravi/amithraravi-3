@@ -12,7 +12,7 @@ teaser: recaptcha-400x250.jpg
 
 Google introduced version 3 of its reCaptcha in late 2018, announcing the adaptive risk analysis spam handler for websites. And the question on everyone’s mind was: Should I upgrade from version 2 to version 3?
 
-![image]({{ site.imagekiturl }}{{ site.images }}recaptcha.jpg)
+![image](/images/recaptcha.jpg)
 <figcaption>Photo by <a href="https://unsplash.com/@paucasals">Pau Casals</a> on <a href="https://unsplash.com">Unsplash</a>.</figcaption>
 
 I think that’s the wrong way to go about it. As it’s not an upgrade in the regular sense. Version 3 is a different way of doing spam protection, with the website owner having more control over deciding who they think is a spammer/bot and what to do about it. That’s what version 3 offers, the platform for deciding. The website owner will still have to implement the actual mechanism of handling spam.

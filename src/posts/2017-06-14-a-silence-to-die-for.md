@@ -11,7 +11,7 @@ teaser:     silence-400x250.jpg
 
 My first horror story!
 
-![image]({{ site.imagekiturl }}{{ site.images }}silence.jpg)
+![image](/images/silence.jpg)
 
 It’s been a crazy month. The wedding is a few weeks away and the activity has reached a fever pitch. What with the constant buzz around the house and the amount of work for the wedding never seems to reduce.
 

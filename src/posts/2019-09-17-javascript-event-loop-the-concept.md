@@ -12,7 +12,7 @@ teaser: event-loop-400x250.jpg
 
 In order to work with JavaScript (in other words, designing any website; and more recently, the server-side [node.js](https://nodejs.org/en/) platform) it is necessary to understand how the **Event loop** works.
 
-![image]({{ site.imagekiturl }}{{ site.images }}event-loop.jpg)
+![image](/images/event-loop.jpg)
 
 ## Event Loop
 

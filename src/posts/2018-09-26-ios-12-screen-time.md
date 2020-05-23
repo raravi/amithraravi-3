@@ -13,7 +13,7 @@ iOS 12 Feature Highlight
 
 So you have updated to the new **iOS 12**, and want to see what it has to offer?! I’m sure you’ve read quite a few articles on all the new features by now. Among these, the one that should grab your attention is **Screen Time**. Let’s see why it’s so important for you and me.
 
-![image]({{ site.imagekiturl }}{{ site.images }}ios-1.jpg)
+![image](/images/ios-1.jpg)
 
 ## WHY DO WE NEED IT?
 
@@ -31,7 +31,7 @@ Apple always strives for a better understanding of what people need right now. A
 
 Enter **Screen Time**! Each user can see the stats on how they are using their devices. Apps they use have been grouped to make sense of the hundreds of apps on our phones. Prominent categories displayed on my iPhone include Social Networking, Games, Reading & Reference, Productivity, Entertainment, Creativity and Other.
 
-![image]({{ site.imagekiturl }}{{ site.images }}ios-2.jpg)
+![image](/images/ios-2.jpg)
 
 The ability to create custom groups would have been greatly appreciated. Many users use Instagram to drive traffic to their blog, and surely can’t look at it as Social Networking. Who knows, Apple may add custom grouping in a future release.
 
@@ -56,6 +56,8 @@ I was curious to see how people used **Screen Time**, so I headed to the Complai
 Some were hilarious.
 
 <blockquote class="twitter-tweet" data-cards="hidden" data-lang="en"><p lang="en" dir="ltr">The iOS 12 updates “Screen Time” feature should be called the “You are a total loser” feature. <a href="https://t.co/nke9xyifUj">pic.twitter.com/nke9xyifUj</a></p>&mdash; Danielle Blair (@ladyriver77) <a href="https://twitter.com/ladyriver77/status/1041831465691041792?ref_src=twsrc%5Etfw">September 17, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The iOS 12 updates “Screen Time” feature should be called the “You are a total loser” feature. <a href="https://t.co/nke9xyifUj">pic.twitter.com/nke9xyifUj</a></p>&mdash; Danielle Blair (@ladyriver77) <a href="https://twitter.com/ladyriver77/status/1041831465691041792?ref_src=twsrc%5Etfw">September 17, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I am completely addicted to iOS 12&#39;s Screen Time feature. Ironically.</p>&mdash; Frozzie Procopé (@frozzieprocope) <a href="https://twitter.com/frozzieprocope/status/1044899230073180160?ref_src=twsrc%5Etfw">September 26, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 

@@ -12,7 +12,7 @@ teaser: cicd-400x250.jpg
 
 For people who want to send their thoughts out into the world, a blog is the perfect medium of delivery. Although the maintenance of a blog feels easy in the beginning, as the content grows with time it becomes difficult to manage the process manually. When the blog hits critical mass, it becomes important to look at automating the maintenance process.
 
-![image]({{ site.imagekiturl }}{{ site.images }}cicd.jpg)
+![image](/images/cicd.jpg)
 
 This is where **CI/CD** tools come in. These tools will automate the testing and deployment stages in a fast and efficient manner.
 

@@ -12,7 +12,7 @@ teaser: gatsby-window-400x250.png
 
 If you have a Gatsby website, then you may have noticed the `window is not defined` error when you try to do `gatsby build`. Since there were quite a few queries regarding this, I thought of explaining the issue and how to fix it!
 
-![image]({{ site.imagekiturl }}{{ site.images }}gatsby-logo.png)
+![image](/images/gatsby-logo.png)
 
 ## The Issue
 
@@ -20,7 +20,7 @@ Say you have a 3rd party JavaScript API on your site. When you’re developing t
 
 > Why does `gatsby develop` run fine, but `gatsby build` throw an error for the same code?!
 
-![image]({{ site.imagekiturl }}{{ site.images }}gatsby-window.png)
+![image](/images/gatsby-window.png)
 
 ## `gatsby develop` vs `gatsby build`
 

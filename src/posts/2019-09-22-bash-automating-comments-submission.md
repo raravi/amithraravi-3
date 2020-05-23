@@ -12,7 +12,7 @@ teaser: automate-400x250.jpg
 
 A **Static Site** is awesome for bloggers. Easy to create (content), easy to maintain (website). And it allows you to tinker with your website design with just a bit of HTML/CSS know-how. The only issue with **Static Sites** is how to manage the comments section, as a bunch of static pages cannot handle form submission on their own.
 
-![image]({{ site.imagekiturl }}{{ site.images }}automate.jpg)
+![image](/images/automate.jpg)
 <figcaption>Photo by <a href="https://unsplash.com/@franckinjapan">Franck V.</a> on  <a href="https://unsplash.com/s/photos/automation">Unsplash</a>.</figcaption>
 
 But fear not, a bit of server-side scripting can solve it for you. The comments can be stored as individual files on the server, as I’ve mentioned in a [previous post]({{ site.url }}{% post_url 2018-11-01-adding-comments-to-a-static-site %}). After this, all I had to do was download the files on to my local machine and process them. In the beginning, I used to do it every week or so as the volume of comments was quite low. However, in the last six months, I’ve found that the increasing high influx of comments requires a daily check. Or, I will miss the genuine comments in the barrage of spam that hits my website every day.

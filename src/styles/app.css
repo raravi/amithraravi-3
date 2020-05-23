@@ -258,13 +258,6 @@ p {
   margin-bottom: 24px;
 }
 
-li {
-  /* @include font-size(16, 12, 24); */
-  font-size: 16px;
-  line-height: 1.5; /*24 / 16;*/
-  margin-bottom: 12px;
-}
-
 /* Headings */
 h1,
 h2,
@@ -370,10 +363,21 @@ h6 {
   margin-bottom: 24px;
 }
 
+/* Images */
+img {
+  max-width: 100%;
+}
+
 /* Lists */
 ol,
 ul {
   padding-left: 40px;
+}
+li {
+  /* @include font-size(16, 12, 24); */
+  font-size: 16px;
+  line-height: 1.5; /*24 / 16;*/
+  margin-bottom: 12px;
 }
 
 /* Underlined text */
