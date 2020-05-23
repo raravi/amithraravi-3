@@ -48,7 +48,7 @@ I thought of BASH scripting to automate this process, as I usually have my MacBo
 
 To download comments, I used [rsync](https://linux.die.net/man/1/rsync) Linux command. If the `rsync` is successful, I delete the downloaded comments from the server. Here is a sample script.
 
-```sh
+```shell
 #!/bin/bash
 
 server="user@server.com"
@@ -58,13 +58,13 @@ destination="/local/path/to/save/new/comments/"
 
 This part declares the variables to be used.
 
-```sh
+```shell
 rsync_command=$(rsync -a --progress "$server:$src" "$destination")
 ```
 
 Execute the `rsync` command to download the comment YML files.
 
-```sh
+```shell
 if [ $? -eq 0 ]; then
     # Success do some more work!
 
@@ -81,7 +81,7 @@ if [ $? -eq 0 ]; then
 
 The above part will delete comment files from the server if the `rsync` command is successful.
 
-```sh
+```shell
 else
     # Something went wrong!
     # This is hit when no files are found
@@ -100,7 +100,7 @@ Once I run this script, I check all the comments downloaded onto my local machin
 
 I will go through the script part by part, as before.
 
-```sh
+```shell
 #!/bin/bash
 
 search_dir="/Users/raravi/Programming/gitprojects/go/newcomments"
@@ -112,7 +112,7 @@ no_of_files_unprocessed=0
 
 The variables are declared here.
 
-```sh
+```shell
 # Get the list of all files
 for file in "$search_dir"/*.yml
 do
@@ -120,7 +120,7 @@ do
 
 The `for` loop will process each comment file.
 
-```sh
+```shell
   if [[ "$file" = "$search_dir/*.yml" ]]
   then
     echo "No YML files found!"
@@ -130,7 +130,7 @@ The `for` loop will process each comment file.
 
 If no files found, exit the loop. Else, move on.
 
-```sh
+```shell
   # Check if file has a SLUG
   echo "FILE: $file"
   if grep -q "slug: *" "$file";
@@ -148,7 +148,7 @@ The above part is specific to my code. I check if the comment file has a line st
 
 You can do processing specific to your comments in the above part!
 
-```sh
+```shell
   # Read each file
   while read line; do
     # read each line
@@ -183,7 +183,7 @@ done
 
 I check for `SLUG`, if it exists then I move the comment to its `post` folder. If the `post` folder doesn’t exist, then I create the `post` folder and then move the comment.
 
-```sh
+```shell
 echo "YML Files: $no_of_files_processed processed, $no_of_files_unprocessed not processed."
 ```
 

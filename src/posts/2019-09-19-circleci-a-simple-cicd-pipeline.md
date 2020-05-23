@@ -113,7 +113,7 @@ If your website code resides on GitHub, you can connect it to CircleCI and start
 
 The only thing required is to add the below file to your repo.
 
-```
+```shell
 .circleci/config.yml
 ```
 
