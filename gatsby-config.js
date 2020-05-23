@@ -38,6 +38,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
+    'gatsby-remark-source-name',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -48,8 +49,22 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'posts',
+        name: 'pages',
         path: `${__dirname}/src/pages/`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'posts',
+        path: `${__dirname}/src/posts/`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'portfolio',
+        path: `${__dirname}/src/portfolio/`,
       },
     },
     'gatsby-transformer-yaml',

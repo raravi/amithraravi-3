@@ -370,6 +370,8 @@ h6 {
   margin-bottom: 24px;
 }
 
+/* Lists */
+ol,
 ul {
   padding-left: 40px;
 }
