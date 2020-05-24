@@ -3,7 +3,7 @@ layout:     media
 title:      "Content Editing"
 date:       2017-07-01 21:00:00 +0530
 modified:   
-categories: portfolio
+categories: [ portfolio ]
 image:  editor-900x450.jpg
 teaser:   editor-400x250.jpg
 ---

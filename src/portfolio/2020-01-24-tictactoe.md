@@ -3,7 +3,7 @@ layout:     media
 title:      "Tic Tac Toe"
 date:       2020-01-24 21:00:00 +0530
 modified:   
-categories: portfolio
+categories: [ portfolio ]
 image:  tictactoe.png
 teaser:   tictactoe-400x250.png
 ---

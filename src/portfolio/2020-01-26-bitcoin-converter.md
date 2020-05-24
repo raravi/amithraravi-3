@@ -3,7 +3,7 @@ layout:     media
 title:      "Bitcoin Converter"
 date:       2020-01-26 21:00:00 +0530
 modified:   
-categories: portfolio
+categories: [ portfolio ]
 image:  bitcoin.png
 teaser:   bitcoin-400x250.png
 ---
