@@ -204,6 +204,7 @@
 @custom-media --small (min-width: 600px);
 @custom-media --medium750 (min-width: 750px);
 @custom-media --medium (min-width: 900px);
+@custom-media --medium1050 (min-width: 1050px);
 
 /**
  * USER RESETS
@@ -235,6 +236,25 @@
   height: 7px;
   width: 100%;
   background-color: var(--red);
+}
+
+.main-wrap {
+  width: 100%;
+}
+@media screen and (--small) {
+  .main-wrap {
+    width: 91.667%;
+  }
+}
+@media screen and (--medium) {
+  .main-wrap {
+    width: 83.33%;
+  }
+}
+@media screen and (--medium1050) {
+  .main-wrap {
+    width: 75%;
+  }
 }
 
 /**

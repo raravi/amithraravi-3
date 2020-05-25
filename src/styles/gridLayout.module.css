@@ -1,0 +1,28 @@
+/* Clear floats after the columns */
+.grid:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Main bar & Side bar */
+.mainbar {
+  float: left;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.sidebar {
+  float: left;
+  width: 100%;
+  padding: 10px;
+}
+
+@media screen and (--medium) {
+  .mainbar {
+    width: 75%;
+  }
+  .sidebar {
+    width: 25%;
+  }
+}

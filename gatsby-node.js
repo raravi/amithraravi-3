@@ -25,6 +25,9 @@ exports.createPages = async ({ graphql, actions }) => {
       allMarkdownRemark {
         edges {
           node {
+            frontmatter {
+              categories
+            }
             fields {
               slug,
               sourceName
@@ -37,20 +40,40 @@ exports.createPages = async ({ graphql, actions }) => {
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     let pageSlug;
     if (node.fields.sourceName === 'posts') {
-      pageSlug = `/articles${node.fields.slug}`;
+      const slug = node.fields.slug.slice(12);
+      pageSlug = `/articles/${node.frontmatter.categories[1]}/${slug}`;
+      createPage({
+        path: pageSlug,
+        component: path.resolve('./src/templates/article.js'),
+        context: {
+          // Data passed to context is available
+          // in page queries as GraphQL variables.
+          slug: node.fields.slug,
+        },
+      });
     } else if (node.fields.sourceName === 'portfolio') {
-      pageSlug = `/portfolio${node.fields.slug}`;
+      const slug = node.fields.slug.slice(12);
+      pageSlug = `/portfolio/${slug}`;
+      createPage({
+        path: pageSlug,
+        component: path.resolve('./src/templates/media.js'),
+        context: {
+          // Data passed to context is available
+          // in page queries as GraphQL variables.
+          slug: node.fields.slug,
+        },
+      });
     } else {
       pageSlug = node.fields.slug;
+      createPage({
+        path: pageSlug,
+        component: path.resolve('./src/templates/media.js'),
+        context: {
+          // Data passed to context is available
+          // in page queries as GraphQL variables.
+          slug: node.fields.slug,
+        },
+      });
     }
-    createPage({
-      path: pageSlug,
-      component: path.resolve('./src/templates/media.js'),
-      context: {
-        // Data passed to context is available
-        // in page queries as GraphQL variables.
-        slug: node.fields.slug,
-      },
-    });
   });
 };

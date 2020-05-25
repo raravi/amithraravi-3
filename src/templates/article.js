@@ -2,22 +2,22 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import MediaLayout from '../components/mediaLayout';
+import ArticleLayout from '../components/articleLayout';
 
-export default function MediaTemplate({ data }) {
+export default function ArticleTemplate({ data }) {
   const post = data.markdownRemark;
 
   return (
-    <MediaLayout>
-      <main className="main-wrap">
+    <ArticleLayout>
+      <article className="main-wrap">
         <h1>{post.frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      </main>
-    </MediaLayout>
+      </article>
+    </ArticleLayout>
   );
 }
 
-MediaTemplate.propTypes = {
+ArticleTemplate.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
 };

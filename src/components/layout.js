@@ -92,7 +92,7 @@ const Layout = ({ children }) => {
         className={styles.container}
       >
         <div className="inner-wrap">
-          <main>{children}</main>
+          {children}
           <Footer siteUrl={data.site.siteMetadata.siteUrl} />
         </div>
       </div>
