@@ -2,6 +2,7 @@
 layout:     article
 title:      "Be Limitless!"
 author:     amith_raravi
+excerpt:    "There was a hope, which was more than hope."
 date:       2018-06-14 20:11:00 +0530
 modified:   2018-06-14 21:59:00 +0530
 categories: [articles, personal]

@@ -2,6 +2,7 @@
 layout:     article
 title:      Moving to my new Home!
 author:     amith_raravi
+excerpt:    "I've moved to a place which I can call my own. Such a sweet feeling!"
 date:       2017-03-30 11:40:00 +0530
 modified:   2017-03-31 18:40:00 +0530
 categories: [articles, personal]

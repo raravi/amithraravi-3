@@ -2,6 +2,7 @@
 layout:     article
 title:      "Starting a Blog"
 author:     amith_raravi
+excerpt:    "Why do some of us have this urge to blog?!"
 date:       2018-10-30 20:06:00 +0530
 modified:   
 categories: [articles, tech]

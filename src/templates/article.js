@@ -8,7 +8,7 @@ export default function ArticleTemplate({ data }) {
   const post = data.markdownRemark;
 
   return (
-    <ArticleLayout>
+    <ArticleLayout layout="article" category={post.frontmatter.categories[1]}>
       <article className="main-wrap">
         <h1>{post.frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -27,7 +27,8 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
-        title
+        title,
+        categories
       }
     }
   }

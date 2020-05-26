@@ -2,6 +2,7 @@
 layout:     article
 title:      "The Mighty Himalayas"
 author:     amith_raravi
+excerpt:    "Nainital, in the Kumaon foothills of the Himalayas, was the home of Jim Corbett."
 date:       2017-06-29 01:30:00 +0530
 modified:   2017-06-29 19:59:00 +0530
 categories: [articles, personal]

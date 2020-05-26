@@ -4,7 +4,7 @@ title:      "Web Design / Digital Marketing"
 date:       2017-06-01 21:00:00 +0530
 modified:   
 categories: [ portfolio ]
-image:  website-design-700x350.jpg
+image:  website-design-900x450.jpg
 teaser:   website-design-400x250.jpg
 ---
 Role:     Freelance Web Designer

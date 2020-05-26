@@ -2,6 +2,7 @@
 layout:     article
 title:      "Your own website - Part I"
 author:     amith_raravi
+excerpt:    "What you should know before buying a domain!"
 date:       2017-03-09 20:20:00 +0530
 modified:   2017-03-18 19:59:00 +0530
 categories: [articles, tech]

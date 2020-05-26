@@ -2,6 +2,7 @@
 layout:     article
 title:      "A Silence to Die For!"
 author:     amith_raravi
+excerpt:    "My first horror story!"
 date:       2017-06-14 20:11:00 +0530
 modified:   2017-06-14 21:59:00 +0530
 categories: [articles, personal]

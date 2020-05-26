@@ -2,6 +2,7 @@
 layout:     article
 title:      "iOS 12 ‘Screen Time’ is Here to Help You Switch Off!"
 author:     amith_raravi
+excerpt:    "iOS 12 Feature Highlight"
 date:       2018-09-26 16:56:00 +0530
 modified:   
 categories: [articles, tech]

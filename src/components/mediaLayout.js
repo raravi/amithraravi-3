@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import GridLayout from './gridLayout';
 
-const MediaLayout = ({ children }) => (
-  <GridLayout>
+const MediaLayout = ({ children, layout }) => (
+  <GridLayout layout={layout}>
     {children}
     <hr />
   </GridLayout>
@@ -11,6 +11,7 @@ const MediaLayout = ({ children }) => (
 
 MediaLayout.propTypes = {
   children: PropTypes.node.isRequired,
+  layout: PropTypes.string.isRequired,
 };
 
 export default MediaLayout;

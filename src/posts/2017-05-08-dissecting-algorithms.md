@@ -2,6 +2,7 @@
 layout:     article
 title:      "Dissecting Algorithms"
 author:     amith_raravi
+excerpt:    "Algorithms are the building blocks of Computer Science."
 date:       2017-05-08 19:56:00 +0530
 modified:   2017-05-08 21:59:00 +0530
 categories: [articles, tech]

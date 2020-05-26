@@ -2,6 +2,7 @@
 layout:     article
 title:      "Fake News in India: My Thoughts on the BBC Study"
 author:     amith_raravi
+excerpt:    "Why do people fall prey to fake news so easily?!"
 date:       2018-12-04 16:06:00 +0530
 modified:   
 categories: [articles, personal]

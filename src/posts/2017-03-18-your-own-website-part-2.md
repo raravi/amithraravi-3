@@ -2,6 +2,7 @@
 layout:     article
 title:      "Your own website - Part II"
 author:     amith_raravi
+excerpt:    "Setting up Web Hosting for your personal domain."
 date:       2017-03-10 20:20:00 +0530
 modified:   2017-03-18 20:21:00 +0530
 categories: [articles, tech]

@@ -2,6 +2,7 @@
 layout:     article
 title:      "Website Design: Creating the Layout in HTML"
 author:     amith_raravi
+excerpt:    "Utilize Float, Flex & Grid to create HTML layouts and know when to use each."
 date:       2018-12-29 16:06:00 +0530
 modified:   
 categories: [articles, tech]

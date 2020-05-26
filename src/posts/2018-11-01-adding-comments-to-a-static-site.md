@@ -2,6 +2,7 @@
 layout:     article
 title:      "Adding Comments to a Static Site"
 author:     amith_raravi
+excerpt:		"How do you add a dynamic part to your static site?!"
 date:       2018-11-01 17:06:00 +0530
 modified:   
 categories: [articles, tech]

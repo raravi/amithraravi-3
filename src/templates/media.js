@@ -3,15 +3,29 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import MediaLayout from '../components/mediaLayout';
+import styles from '../styles/media.module.css';
 
 export default function MediaTemplate({ data }) {
   const post = data.markdownRemark;
 
   return (
-    <MediaLayout>
+    <MediaLayout layout="media">
       <main className="main-wrap">
-        <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        {post.frontmatter.image
+        && (
+        <div className={styles.pageImage}>
+          <img
+            src={`/images/${post.frontmatter.image}`}
+            alt={post.frontmatter.title}
+          />
+        </div>
+        )}
+        <div className="line-red" />
+        <div className={styles.pageTitle}>
+          <h1>{ post.frontmatter.title }</h1>
+        </div>
+        <div className="line-red" />
+        <div className={styles.post} dangerouslySetInnerHTML={{ __html: post.html }} />
       </main>
     </MediaLayout>
   );
@@ -27,7 +41,8 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
-        title
+        title,
+        image
       }
     }
   }
