@@ -13,7 +13,7 @@ export default function MediaTemplate({ data }) {
       <main className="main-wrap">
         {post.frontmatter.image
         && (
-        <div className={styles.pageImage}>
+        <div className={styles.media_pageImage}>
           <img
             src={`/images/${post.frontmatter.image}`}
             alt={post.frontmatter.title}
@@ -21,7 +21,7 @@ export default function MediaTemplate({ data }) {
         </div>
         )}
         <div className="line-red" />
-        <div className={styles.pageTitle}>
+        <div className={styles.media_pageTitle}>
           <h1>{ post.frontmatter.title }</h1>
         </div>
         <div className="line-red" />

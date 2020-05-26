@@ -2,7 +2,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 import ArticleLayout from '../components/articleLayout';
+import styles from '../styles/article.module.css';
 
 export default function ArticleTemplate({ data }) {
   const post = data.markdownRemark;
@@ -10,8 +12,19 @@ export default function ArticleTemplate({ data }) {
   return (
     <ArticleLayout layout="article" category={post.frontmatter.categories[1]}>
       <article className="main-wrap">
-        <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div className="line-red" />
+        <div className={styles.article_pageTitle}>
+          <h1>{post.frontmatter.title}</h1>
+        </div>
+        <div className={styles.article_pageDate}>
+          <p>
+            <time dateTime={moment(post.frontmatter.date).format()}>
+              {post.frontmatter.datePublished}
+            </time>
+          </p>
+        </div>
+        <div className="line-red" />
+        <div className={styles.article_post} dangerouslySetInnerHTML={{ __html: post.html }} />
       </article>
     </ArticleLayout>
   );
@@ -28,7 +41,9 @@ export const query = graphql`
       html
       frontmatter {
         title,
-        categories
+        categories,
+        date
+        datePublished: date(formatString: "Do MMMM YYYY")
       }
     }
   }

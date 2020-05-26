@@ -504,7 +504,7 @@ li code {
   /* @include font-size(16, no); */
   font-size: 16px;
   line-height: 1.5; /*24 / 16;*/
-  margin-bottom: 0; 
+  margin-bottom: 0;
   color: var(--text-color);
   white-space: nowrap;
   margin: 0 2px;
