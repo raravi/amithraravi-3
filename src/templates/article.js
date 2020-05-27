@@ -6,8 +6,10 @@ import moment from 'moment';
 import ArticleLayout from '../components/articleLayout';
 import styles from '../styles/article.module.css';
 
-export default function ArticleTemplate({ data }) {
+export default function ArticleTemplate({ path, data }) {
   const post = data.markdownRemark;
+  const authors = data.allAuthorsYaml;
+  const { siteUrl } = data.site.siteMetadata;
 
   return (
     <ArticleLayout layout="article" category={post.frontmatter.categories[1]}>
@@ -25,6 +27,59 @@ export default function ArticleTemplate({ data }) {
         </div>
         <div className="line-red" />
         <div className={styles.article_post} dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div className="line-red" />
+        <footer className={styles.article_pageFooter}>
+          <div className={styles.article_authorImage}>
+            <img
+              src={`/images/${authors.edges[0].node.avatar}`}
+              alt={authors.edges[0].node.name}
+            />
+          </div>
+          <div className={styles.article_authorContent}>
+            <h3 className={styles.authorName}>
+              Written by
+              {' '}
+              <a href={authors.edges[0].node.web}>{authors.edges[0].node.name}</a>
+            </h3>
+            <p className={styles.authorBio}>{authors.edges[0].node.bio}</p>
+            <div className={styles.article_shareThis}>
+              <div className={`${styles.col} ${styles.first}`}>
+                <a
+                  href={`https://twitter.com/intent/tweet?text=${post.frontmatter.title.replace(/ /gi, '%20')}&url=${siteUrl}${path}&via=${authors.edges[0].node.twitter}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  &nbsp;Twitter
+                </a>
+              </div>
+              <div className={`${styles.col} ${styles.middle}`}>
+                <a
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${siteUrl}${path}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Facebook
+                </a>
+              </div>
+              <div className={`${styles.col} ${styles.last}`}>
+                <a
+                  href={`https://plus.google.com/share?url=${siteUrl}${path}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  &nbsp;Google+
+                </a>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <div className="line-red" />
+        <div className="div-20-high" />
+        {/* {% include latest-posts-grid.html %} */}
+        <div className="div-30-high" />
+        <aside>
+          {/* {% include post-comments.html -%} */}
+        </aside>
       </article>
     </ArticleLayout>
   );
@@ -33,6 +88,7 @@ export default function ArticleTemplate({ data }) {
 ArticleTemplate.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
+  path: PropTypes.string.isRequired,
 };
 
 export const query = graphql`
@@ -44,6 +100,27 @@ export const query = graphql`
         categories,
         date
         datePublished: date(formatString: "Do MMMM YYYY")
+      }
+    }
+    allAuthorsYaml {
+      edges {
+        node {
+          id
+          email
+          bio
+          avatar
+          name
+          twitter
+          web
+          google {
+            plus
+          }
+        }
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
       }
     }
   }
