@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from '../styles/sidebar.module.css';
 
 const Sidebar = ({ layout, category }) => {
-  const { sidePostsTech, sidePostsPersonal } = useStaticQuery(
+  const { sidePostsTech, sidePostsPersonal, site } = useStaticQuery(
     graphql`
     query {
       sidePostsTech: allMarkdownRemark(
@@ -57,6 +57,27 @@ const Sidebar = ({ layout, category }) => {
           }
         }
       }
+      site {
+        siteMetadata {
+          email
+          facebook {
+            url
+            username
+          }
+          github {
+            url
+            username
+          }
+          instagram {
+            url
+            username
+          }
+          linkedin {
+            url
+            username
+          }
+        }
+      }
     }
     `,
   );
@@ -87,7 +108,7 @@ const Sidebar = ({ layout, category }) => {
       <div className={styles.sidebar_text}>
         <a
           className={styles.socialIcon}
-          href="{{site.owner.linkedin.url}}/{{site.owner.linkedin.username}}"
+          href={`${site.siteMetadata.linkedin.url}/${site.siteMetadata.linkedin.username}`}
           aria-label="Link to LinkedIn profile of Amith Raravi"
         >
           <svg className={`${styles.icon} ${styles.iconLinkedin}`}>
@@ -96,7 +117,7 @@ const Sidebar = ({ layout, category }) => {
         </a>
         <a
           className={styles.socialIcon}
-          href="{{site.owner.instagram.url}}/{{site.owner.instagram.username}}"
+          href={`${site.siteMetadata.instagram.url}/${site.siteMetadata.instagram.username}`}
           aria-label="Link to Instagram profile of Amith Raravi"
         >
           <svg className={`${styles.icon} ${styles.iconInstagram}`}>
@@ -105,7 +126,7 @@ const Sidebar = ({ layout, category }) => {
         </a>
         <a
           className={styles.socialIcon}
-          href="{{site.owner.github.url}}/{{site.owner.github.username}}"
+          href={`${site.siteMetadata.github.url}/${site.siteMetadata.github.username}`}
           aria-label="Link to GitHub profile of Amith Raravi"
         >
           <svg className={`${styles.icon} ${styles.iconGithub}`}>
@@ -114,7 +135,7 @@ const Sidebar = ({ layout, category }) => {
         </a>
         <a
           className={styles.socialIcon}
-          href="{{site.owner.facebook.url}}/{{site.owner.facebook.username}}"
+          href={`${site.siteMetadata.facebook.url}/${site.siteMetadata.facebook.username}`}
           aria-label="Link to Facebook profile of Amith Raravi"
         >
           <svg className={`${styles.icon} ${styles.iconFacebook}`}>
@@ -122,8 +143,8 @@ const Sidebar = ({ layout, category }) => {
           </svg>
         </a>
       </div>
-      <div className={styles.sidebar_text}>
-        <a href="mailto:{{site.owner.email}}"><i>contact me</i></a>
+      <div className={styles.sidebar_contactText}>
+        <a href={`mailto:${site.siteMetadata.email}`}><i>contact me</i></a>
       </div>
       <div className="div-20-high" />
       <div className="line-red" />

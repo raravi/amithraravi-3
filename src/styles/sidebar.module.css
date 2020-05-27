@@ -97,6 +97,15 @@
   color: var(--facebook-color);
 }
 
+.sidebar_contactText {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.sidebar_contactText a {
+  border-bottom: none;
+}
+
 .sidebar_bloggerResources a {
   /* @include font-size(15, yes, 30); */
   font-size: 15px;

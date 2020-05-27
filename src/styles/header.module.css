@@ -113,6 +113,7 @@
 }
 
 .topMenu_siteTitle:hover {
+  color: var(--black);
   text-shadow: 4px 8px 6px rgba(0, 0, 0, 0.19);
 }
 
