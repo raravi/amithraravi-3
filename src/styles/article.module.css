@@ -172,26 +172,19 @@
 
 .thGrid li {
   list-style: none;
-  /* @include span-columns(3); */
-  /* @include omega(4n); */
   float: left;
   width: 25%;
   padding: 8px;
   margin-bottom: 0;
-  /* margin-bottom: flex-gutter($grid-columns); */
 }
 
 @media screen and (max-width: 749px) {
   .thGrid li {
-    /* @include span-columns(6);
-    @include omega(2n); */
     width: 50%;
   }
 }
 @media screen and (max-width: 449px) {
   .thGrid li {
-    /* @include span-columns(12);
-    @include omega(n); */
     width: 100%;
   }
 }
@@ -205,7 +198,6 @@
   /* @include font-size(14, no); */
   font-size: 14px;
   line-height: 1.714; /*24 / 14;*/
-  margin-bottom: 0;
   color: var(--text-color);
   font-weight: 400;
   font-family: var(--grid-title-font);
@@ -233,60 +225,11 @@
 }
 
 .thGrid a:hover h6 {
-  /* color: $cg-red; */
   color: var(--boston-red);
 }
 
 /*
 
-.th-grid {
-  @include row($direction: LTR);
-  @include clearfix;
-  margin: 0;
-  padding: 0;
-  li {
-    list-style: none;
-    @include span-columns(3);
-    @include omega(4n);
-    margin-bottom: flex-gutter($grid-columns);
-    img {
-      width: 100%;
-      max-height: 180px;
-      overflow-y: hidden;
-    }
-    h6 {
-      @include font-size(14, no);
-      color: $text-color;
-      font-weight: 400;
-      font-family: $grid-title-font;
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-  }
-  @media screen and (max-width: 749px) {
-    li {
-      @include span-columns(6);
-      @include omega(2n);
-    }
-  }
-  @media screen and (max-width: 449px) {
-    li {
-      @include span-columns(12);
-      @include omega(n);
-    }
-  }
-  a {
-    &:hover {
-      // Image hover animation
-      img {
-        @include animation(pop 0.3s 0 linear);
-        box-shadow: 0 0 10px rgba($black, 0.2);
-      }
-      h6 {
-        color: $cg-red;
-      }
-    }
-  }
-}
+
 
 */
