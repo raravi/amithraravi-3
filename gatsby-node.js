@@ -49,6 +49,7 @@ exports.createPages = async ({ graphql, actions }) => {
           // Data passed to context is available
           // in page queries as GraphQL variables.
           slug: node.fields.slug,
+          category: node.frontmatter.categories[1],
         },
       });
     } else if (node.fields.sourceName === 'portfolio') {

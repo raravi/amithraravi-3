@@ -10,6 +10,8 @@ export default function ArticleTemplate({ path, data }) {
   const post = data.markdownRemark;
   const authors = data.allAuthorsYaml;
   const { siteUrl } = data.site.siteMetadata;
+  const { posts } = data;
+  const postCategory = post.frontmatter.categories[1];
 
   return (
     <ArticleLayout layout="article" category={post.frontmatter.categories[1]}>
@@ -74,8 +76,29 @@ export default function ArticleTemplate({ path, data }) {
           </div>
         </footer>
         <div className="line-red" />
-        <div className="div-20-high" />
-        {/* {% include latest-posts-grid.html %} */}
+        <div className={styles.article_archiveWrap}>
+          <h4>You Might Also Like</h4>
+          <ul className={styles.thGrid}>
+            {
+              posts.edges.map(({ node }) => (
+                <li>
+                  <a
+                    href={`${siteUrl}/articles/${postCategory}/${node.fields.slug.slice(12)}`}
+                    title={node.frontmatter.title}
+                  >
+                    <div>
+                      <img
+                        src={`${siteUrl}/images/${node.frontmatter.teaser}`}
+                        alt="teaser"
+                      />
+                      <h6>{node.frontmatter.title}</h6>
+                    </div>
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
         <div className="div-30-high" />
         <aside>
           {/* {% include post-comments.html -%} */}
@@ -92,7 +115,10 @@ ArticleTemplate.propTypes = {
 };
 
 export const query = graphql`
-  query($slug: String!) {
+  query(
+    $slug: String!
+    $category: String!
+  ) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
@@ -100,6 +126,9 @@ export const query = graphql`
         categories,
         date
         datePublished: date(formatString: "Do MMMM YYYY")
+      }
+      fields {
+        slug
       }
     }
     allAuthorsYaml {
@@ -121,6 +150,33 @@ export const query = graphql`
     site {
       siteMetadata {
         siteUrl
+      }
+    }
+    posts: allMarkdownRemark(
+      limit: 4,
+      filter: {
+        frontmatter: {
+          categories: {eq: $category}
+        }
+        fields: {
+          slug: {ne: $slug}
+        }
+      }
+      sort: {
+        fields: [frontmatter___date]
+        order: DESC
+      }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            teaser
+          }
+          fields {
+            slug
+          }
+        }
       }
     }
   }
