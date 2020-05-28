@@ -1,29 +1,29 @@
 // import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-import style from '../styles/header.module.css';
+import styles from '../styles/header.module.css';
 
 const Header = ({ siteUrl }) => (
-  <header className={style.topMenu}>
+  <header className={styles.topMenu}>
     <div className="inner-wrap">
       <nav role="navigation">
-        <ul className={style.topMenu_menu}>
+        <ul className={styles.topMenu_menu}>
           <li>
-            <a href={`${siteUrl}/articles/`} className={style.topMenu_item}>
+            <a href={`${siteUrl}/articles/`} className={styles.topMenu_item}>
               <span>Articles</span>
             </a>
           </li>
           <li>
-            <a href={`${siteUrl}/`} className={style.topMenu_siteTitle}>
-              <span className={style.firstLetter}>a</span>
+            <a href={`${siteUrl}/`} className={styles.topMenu_siteTitle}>
+              <span className={styles.firstLetter}>a</span>
               miTh
               {' '}
-              <span className={style.firstLetter}>r</span>
+              <span className={styles.firstLetter}>r</span>
               aravi
             </a>
           </li>
           <li>
-            <a href={`${siteUrl}/portfolio/`} className={style.topMenu_item}>
+            <a href={`${siteUrl}/portfolio/`} className={styles.topMenu_item}>
               <span>Portfolio</span>
             </a>
           </li>

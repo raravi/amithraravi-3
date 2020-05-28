@@ -37,17 +37,6 @@
   }
 }
 
-@keyframes slide-down {
-  0% {
-    top: -100%;
-    opacity: 0;
-  }
-  100% {
-    top: 0;
-    opacity: 1;
-  }
-}
-
 .topMenu {
   /* border: 1px solid blue; /* For debugging */
   padding: var(--gutter) var(--gutter-half);
@@ -109,7 +98,7 @@
   line-height: var(--masthead-height-half);
   margin-bottom: 0px;
   /* opacity: 0; */
-  animation: slide-down 0.5s ease-out 0.75s 1 normal both;
+  /* animation: slide-down 0.5s ease-out 0.75s 1 normal both; */
 }
 
 .topMenu_siteTitle:hover {
@@ -158,7 +147,7 @@
   margin: 0 var(--gutter-half);
   padding: var(--masthead-height-onefourth) 0 var(--masthead-height-onefourth);
   /* opacity: 0; */
-  animation: slide-down 0.5s ease-out 1.25s 1 normal both;
+  /* animation: slide-down 0.5s ease-out 1.25s 1 normal both; */
 }
 
 .topMenu_item span {

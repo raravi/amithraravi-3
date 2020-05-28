@@ -73,6 +73,23 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     // eslint-disable-next-line no-undef
+    if (window.runOnce === undefined) {
+      // eslint-disable-next-line no-undef
+      const topMenuItems = document.querySelectorAll(`.${stylesHeader.topMenu_item}`);
+      topMenuItems[0].classList.add('topMenu_item___animation');
+      topMenuItems[1].classList.add('topMenu_item___animation');
+
+      // eslint-disable-next-line no-undef
+      const topMenuSiteTitle = document.querySelector(`.${stylesHeader.topMenu_siteTitle}`);
+      topMenuSiteTitle.classList.add('topMenu_siteTitle___animation');
+
+      // eslint-disable-next-line no-undef
+      window.runOnce = true;
+    }
+  }, []);
+
+  useEffect(() => {
+    // eslint-disable-next-line no-undef
     window.addEventListener('load', stickyHeading);
     // eslint-disable-next-line no-undef
     window.addEventListener('scroll', stickyHeading);
