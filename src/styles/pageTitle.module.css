@@ -1,0 +1,19 @@
+.article_pageTitle {
+  margin-top: 25px;
+  margin-bottom: 24px;
+}
+
+.article_pageDate {
+  position: relative;
+  top: -10px;
+}
+
+.article_pageDate p {
+  margin-top: 0px;
+  /* @include font-size(14, no); */
+  font-size: 14px;
+  line-height: 1.714; /*24 / 14;*/
+  font-family: var(--alt-font);
+  color: var(--black-lighter-45);
+  margin-bottom: 10px;
+}

@@ -1,0 +1,127 @@
+.article_pageFooter {
+  position: relative;
+  margin-top: 35px;
+}
+
+.article_authorImage {
+  position: absolute;
+  left: 0;
+}
+
+.article_authorImage img {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--border-radius);
+}
+
+.article_authorContent {
+  word-wrap: break-word;
+  /* avatar width + 20px padding */
+  padding-left: 100px;
+  /* mirrors avatar height */
+  min-height: 80px;
+}
+
+.article_authorContent .authorName {
+  margin-top: 15px;
+  padding-top: 5px;
+  /* @include font-size(20, no); */
+  font-size: 20px;
+  line-height: 1.2; /*24 / 20;*/
+  margin-bottom: 0;
+}
+
+.article_authorContent .authorName a {
+  border-bottom: none;
+}
+
+.article_authorContent .authorBio {
+  margin-top: 7px;
+  /* @include font-size(16); */
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.article_shareThis {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 485px;
+  margin-bottom: 20px;
+}
+
+.article_shareThis .col {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 100%;
+  max-width: 100%;
+}
+
+@media screen and (--small) {
+  .article_shareThis .col {
+    flex: 33%;
+    max-width: 33%;
+  }
+}
+
+.article_shareThis .col a {
+  font-family: var(--heading-font);
+  font-size: 14px;
+  text-align: center;
+  align-content: center;
+  border: 1px solid #ddd;
+  padding: 8px 20px 10px;
+  border-radius: 40px;
+  color: var(--text-color);
+}
+
+.article_shareThis .col a:hover {
+  color: white;
+}
+
+.article_shareThis .first {
+  padding-right: 0;
+}
+
+@media screen and (--small) {
+  .article_shareThis .first {
+    padding-right: 5px;
+  }
+}
+
+.article_shareThis .first a:hover {
+  background-color: var(--twitter-color);
+  border-color: var(--twitter-color);
+}
+
+.article_shareThis .middle {
+  padding: 0 0;
+}
+
+@media screen and (--small) {
+  .article_shareThis .middle {
+    padding: 0 5px;
+  }
+}
+
+.article_shareThis .middle a:hover {
+  background-color: var(--facebook-color);
+  border-color: var(--facebook-color);
+}
+
+.article_shareThis .last {
+  padding-left: 0;
+}
+
+@media screen and (--small) {
+  .article_shareThis .last {
+    padding-left: 5px;
+  }
+}
+
+.article_shareThis .last a:hover {
+  background-color: var(--google-plus-color);
+  border-color: var(--google-plus-color);
+}
