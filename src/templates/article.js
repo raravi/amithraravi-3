@@ -1,5 +1,5 @@
 /* eslint-disable react/no-danger */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import ArticleLayout from '../components/articleLayout';
@@ -14,6 +14,18 @@ export default function ArticleTemplate({ path, data }) {
   const { siteUrl } = data.site.siteMetadata;
   const { posts } = data;
   const postCategory = post.frontmatter.categories[1];
+
+  useEffect(() => {
+    // eslint-disable-next-line no-undef
+    if (window) {
+      // eslint-disable-next-line no-undef
+      window.scroll({
+        top: 0,
+        left: 0,
+        // behavior: 'smooth',
+      });
+    }
+  }, []);
 
   return (
     <ArticleLayout layout="article" category={post.frontmatter.categories[1]}>

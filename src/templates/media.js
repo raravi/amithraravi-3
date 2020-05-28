@@ -1,5 +1,5 @@
 /* eslint-disable react/no-danger */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import MediaLayout from '../components/mediaLayout';
@@ -7,6 +7,18 @@ import styles from '../styles/media.module.css';
 
 export default function MediaTemplate({ data }) {
   const post = data.markdownRemark;
+
+  useEffect(() => {
+    // eslint-disable-next-line no-undef
+    if (window) {
+      // eslint-disable-next-line no-undef
+      window.scroll({
+        top: 0,
+        left: 0,
+        // behavior: 'smooth',
+      });
+    }
+  }, []);
 
   return (
     <MediaLayout layout="media">
