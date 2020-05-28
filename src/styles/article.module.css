@@ -173,19 +173,19 @@
 .thGrid li {
   list-style: none;
   float: left;
-  width: 25%;
+  width: 100%;
   padding: 8px;
   margin-bottom: 0;
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (--small450) {
   .thGrid li {
     width: 50%;
   }
 }
-@media screen and (max-width: 449px) {
+@media screen and (--medium750) {
   .thGrid li {
-    width: 100%;
+    width: 25%;
   }
 }
 
