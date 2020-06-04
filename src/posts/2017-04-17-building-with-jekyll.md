@@ -3,8 +3,8 @@ layout:     article
 title:      "Building a Static Site with Jekyll"
 author:     amith_raravi
 excerpt:    "Jekyll it is, Mr. Amith!"
-date:       2017-04-17 14:51:00 +0530
-modified:   2017-04-17 16:34:00 +0530
+date:       2017-04-17 14:51:00+0530
+modified:   2017-04-17 16:34:00+0530
 categories: [articles, tech]
 image:      images/jekyll-templates.jpg
 teaser:     jekyll-logo-400x250.png

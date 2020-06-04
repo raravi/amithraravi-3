@@ -3,7 +3,7 @@ layout: article
 title: "JavaScript Event Loop: The Concept"
 author: amith_raravi
 excerpt: "The concept of JavaScript Event Loop and the Concurrency Model."
-date: 2019-09-17 16:06:00 +0530
+date: 2019-09-17 16:06:00+0530
 modified:
 categories: [articles, tech]
 image: images/event-loop.jpg

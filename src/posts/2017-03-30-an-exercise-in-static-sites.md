@@ -3,7 +3,7 @@ layout:     article
 title:      "An Exercise in Static Sites"
 author:     amith_raravi
 excerpt:    "How I ended up choosing Jekyll for creating my site!"
-date:       2017-03-30 12:05:00 +0530
+date:       2017-03-30 12:05:00+0530
 modified:   
 categories: [articles, tech]
 image:      images/static-and-dynamic.png

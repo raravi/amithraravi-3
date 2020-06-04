@@ -3,7 +3,7 @@ layout:     article
 title:      "Website Design: The Basics"
 author:     amith_raravi
 excerpt:    "How to design a website and what are the basic steps involved?!"
-date:       2018-11-23 16:06:00 +0530
+date:       2018-11-23 16:06:00+0530
 modified:   
 categories: [articles, tech]
 image:      images/design-1.jpg

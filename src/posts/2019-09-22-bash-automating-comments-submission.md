@@ -3,7 +3,7 @@ layout: article
 title: "Bash: Automating Comments Submission for a Static Site"
 author: amith_raravi
 excerpt: "Automate publishing of new comments submitted to your static site."
-date: 2019-09-22 16:06:00 +0530
+date: 2019-09-22 16:06:00+0530
 modified:
 categories: [articles, tech]
 image: images/automate.jpg

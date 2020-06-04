@@ -3,8 +3,8 @@ layout:     article
 title:      "Protect Your Morality!"
 author:     amith_raravi
 excerpt:    "Morality is not the doctrine of how we may make ourselves happy..."
-date:       2017-04-26 18:45:00 +0530
-modified:   2017-04-26 19:59:00 +0530
+date:       2017-04-26 18:45:00+0530
+modified:   2017-04-26 19:59:00+0530
 categories: [articles, personal]
 image:      images/morality.jpg
 teaser:     morality-400x250.jpg

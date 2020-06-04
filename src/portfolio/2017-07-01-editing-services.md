@@ -1,7 +1,7 @@
 ---
 layout:     media
 title:      "Content Editing"
-date:       2017-07-01 21:00:00 +0530
+date:       2017-07-01 21:00:00+0530
 modified:   
 categories: [ portfolio ]
 image:  editor-900x450.jpg

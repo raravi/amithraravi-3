@@ -3,7 +3,7 @@ layout: article
 title: "Gatsby and the 'window' variable"
 author: amith_raravi
 excerpt: "Where did the 'window' go? And how can I get it back?!"
-date: 2020-01-24 16:06:00 +0530
+date: 2020-01-24 16:06:00+0530
 modified:
 categories: [articles, tech]
 image: images/gatsby-logo.png

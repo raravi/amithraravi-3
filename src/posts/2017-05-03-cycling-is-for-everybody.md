@@ -3,8 +3,8 @@ layout:     article
 title:      "Cycling is for Everybody"
 author:     amith_raravi
 excerpt:    "The freedom of speed is an exhilarating feeling, it gives you wings!"
-date:       2017-05-03 19:16:00 +0530
-modified:   2017-05-03 21:59:00 +0530
+date:       2017-05-03 19:16:00+0530
+modified:   2017-05-03 21:59:00+0530
 categories: [articles, personal]
 image:      images/cycling.jpg
 teaser:     cycling-400x250.jpg

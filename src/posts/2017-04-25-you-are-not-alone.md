@@ -3,8 +3,8 @@ layout:     article
 title:      "You Are Not Alone"
 author:     amith_raravi
 excerpt:    "Depression can hit anyone at any time in their lives."
-date:       2017-04-25 17:45:00 +0530
-modified:   2017-04-25 19:59:00 +0530
+date:       2017-04-25 17:45:00+0530
+modified:   2017-04-25 19:59:00+0530
 categories: [articles, personal]
 image:      images/not-alone-2.jpg
 teaser:     not-alone-2-400x250.jpg

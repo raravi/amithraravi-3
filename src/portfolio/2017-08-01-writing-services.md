@@ -1,7 +1,7 @@
 ---
 layout:     media
 title:      "Content Creation"
-date:       2017-08-01 21:00:00 +0530
+date:       2017-08-01 21:00:00+0530
 modified:   
 categories: [ portfolio ]
 image:  writer-900x450.jpg

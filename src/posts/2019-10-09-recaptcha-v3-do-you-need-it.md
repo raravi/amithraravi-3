@@ -3,7 +3,7 @@ layout: article
 title: "reCaptcha v3: Do You Need It?"
 author: amith_raravi
 excerpt: "For greater control over bots/spam handling, use reCaptcha v3!"
-date: 2019-10-09 16:06:00 +0530
+date: 2019-10-09 16:06:00+0530
 modified:
 categories: [articles, tech]
 image: images/recaptcha.jpg

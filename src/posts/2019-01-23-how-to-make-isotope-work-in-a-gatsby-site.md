@@ -3,7 +3,7 @@ layout: article
 title: "How to make Isotope work in a Gatsby site"
 author: amith_raravi
 excerpt: "Isotope.js implementation for grid filtering on a Gatsby generated React.js site."
-date: 2019-01-23 16:06:00 +0530
+date: 2019-01-23 16:06:00+0530
 modified:
 categories: [articles, tech]
 image: images/isotope.jpg

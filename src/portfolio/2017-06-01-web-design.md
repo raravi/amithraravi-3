@@ -1,7 +1,7 @@
 ---
 layout:     media
 title:      "Web Design / Digital Marketing"
-date:       2017-06-01 21:00:00 +0530
+date:       2017-06-01 21:00:00+0530
 modified:   
 categories: [ portfolio ]
 image:  website-design-900x450.jpg

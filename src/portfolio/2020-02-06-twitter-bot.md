@@ -1,7 +1,7 @@
 ---
 layout:     media
 title:      "Twitter bot"
-date:       2020-02-06 21:00:00 +0530
+date:       2020-02-06 21:00:00+0530
 modified:   
 categories: [ portfolio ]
 image:  twitter-bot.jpg
