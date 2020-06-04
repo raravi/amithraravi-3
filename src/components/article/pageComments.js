@@ -38,7 +38,7 @@ const PageComments = ({ comments, path, siteUrl }) => {
   return (
     <section>
       {
-        pageCommentsSorted && (
+        pageCommentsSorted.length > 0 && (
           <div>
             <h4 className={styles.comments_header}>
               {`${pageCommentsSorted.length} Comment(s)`}
