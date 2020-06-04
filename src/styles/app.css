@@ -524,7 +524,7 @@ pre {
 p code,
 li code {
   /* @include font-size(16, no); */
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5; /*24 / 16;*/
   margin-bottom: 0;
   color: var(--text-color);
