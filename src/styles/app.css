@@ -198,12 +198,11 @@
   --text-color: hsl(60, 1%, 19%);
   --caption-color: hsl(60, 0%, 39%);
   --primary-color: var(--black);
+  --primary-color-light-10: hsl(0, 0%, 10%);
   --primary-color-light-95: hsl(0, 0%, 95%);
-  --primary-color-dark-5: hsl(0, 0%, 0%);
   --base-color: #343434;
   --info-color: #3498db;
   --border-color: hsl(0, 0%, 87%);
-  --border-color-light-10: hsl(0, 0%, 97%);
   --border-color-dark-10: hsl(0, 0%, 77%);
   --link-underline-color: hsl(0, 0%, 64%);
 
@@ -600,20 +599,53 @@ hr::before {
 }
 
 /*
+    Buttons
+    ========================================================================== */
+
+.btn {
+  display: inline-block;
+  padding: 8px 20px;
+  /* @include font-size(14); */
+  font-size: 14px;
+  line-height: 1.714;
+  margin-bottom: 24px;
+  font-family: var(--alt-font);
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-decoration: none;
+  border: 0;
+  border-radius: 30px;
+  transition: background 0.2s, border 0.2s;
+}
+
+.btn:hover {
+  color: var(--white);
+  background-color: var(--primary-color-light-10);
+}
+
+.btn:active {
+  /* move button slightly on click */
+  transform: translateY(1px);
+}
+
+/*
     Forms
     ========================================================================== */
 
+#respond {
+  background-color: ghostwhite;
+  padding-top: 1px;
+}
+
 fieldset {
-  background: var(--border-color-light-10);
-  border: 1px solid var(--border-color);
-  margin-bottom: var(--doc-line-height);
-  padding: var(--gutter);
   border-radius: var(--border-radius);
+  margin: 0 50px 5px;
+  padding: 0;
+  border-width: 0;
 }
 
 input,
-label,
-select {
+label {
   display: block;
   /* @include font-size($form-font-size, no); */
   font-size: 16px;
@@ -621,22 +653,30 @@ select {
   margin-bottom: 0;
 }
 
+input a,
+label a {
+  color: var(--boston-red);
+  border-bottom: none;
+}
+
+input a:hover,
+label a:hover {
+  color: var(--boston-red-light-5);
+  border-bottom: none;
+}
+
 label {
   font-weight: bold;
-  font-family: var(--alt-font);
+  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+    "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
   margin-bottom: var(--doc-line-height-onefourth);
 }
 label.required:after {
   content: "*";
 }
-label abbr {
-  display: none;
-}
 
-textarea,
-/* #{$all-text-inputs}, */
-select,
-select[multiple="multiple"] {
+input,
+textarea {
   box-sizing: border-box;
   transition: border-color;
   background-color: white;
@@ -650,16 +690,13 @@ select[multiple="multiple"] {
   width: 100%;
 }
 
-textarea:hover,
-/* #{$all-text-inputs}, */
-select:hover,
-select[multiple="multiple"]:hover {
+input:hover,
+textarea:hover {
   border-color: var(--border-color-dark-10);
 }
-textarea:focus,
-/* #{$all-text-inputs}, */
-select:focus,
-select[multiple="multiple"]:focus {
+
+input:focus,
+textarea:focus {
   border-color: var(--primary-color);
   box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.06),
               0 0 5px rgba(#000, 0.7);
@@ -670,34 +707,17 @@ textarea {
   resize: vertical;
 }
 
-input[type="search"] {
-  appearance: none;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-  display: inline;
-  margin-right: var(--doc-line-height-onefourth);
-}
-
-input[type="file"] {
-  width: 100%;
-}
-
-select {
-  width: auto;
-  max-width: 100%;
-  margin-bottom: var(--doc-line-height);
-}
-
 form button,
 input[type="submit"] {
-  /* @extend .btn; */
   appearance: none;
   cursor: pointer;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+}
+
+.hidden {
+  display: none;
 }
 
 /*

@@ -6,9 +6,16 @@ import ArticleLayout from '../components/articleLayout';
 import PageTitle from '../components/article/pageTitle';
 import PageFooter from '../components/article/pageFooter';
 import PagePosts from '../components/article/pagePosts';
+import PageComments from '../components/article/pageComments';
 import styles from '../styles/article.module.css';
 
-export default function ArticleTemplate({ path, data }) {
+export default function ArticleTemplate({
+  path,
+  data,
+  pageContext: {
+    comments,
+  },
+}) {
   const post = data.markdownRemark;
   const authors = data.allAuthorsYaml;
   const { siteUrl } = data.site.siteMetadata;
@@ -35,7 +42,10 @@ export default function ArticleTemplate({ path, data }) {
           date={post.frontmatter.date}
           datePublished={post.frontmatter.datePublished}
         />
-        <div className={styles.article_post} dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div
+          className={styles.article_post}
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
         <PageFooter
           avatar={authors.edges[0].node.avatar}
           name={authors.edges[0].node.name}
@@ -46,9 +56,17 @@ export default function ArticleTemplate({ path, data }) {
           path={path}
           twitter={authors.edges[0].node.twitter}
         />
-        <PagePosts posts={posts} siteUrl={siteUrl} postCategory={postCategory} />
+        <PagePosts
+          posts={posts}
+          siteUrl={siteUrl}
+          postCategory={postCategory}
+        />
         <aside>
-          {/* {% include post-comments.html -%} */}
+          <PageComments
+            comments={comments.data.comments}
+            path={path}
+            siteUrl={siteUrl}
+          />
         </aside>
       </article>
     </ArticleLayout>
@@ -59,6 +77,8 @@ ArticleTemplate.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
   path: PropTypes.string.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  pageContext: PropTypes.object.isRequired,
 };
 
 export const query = graphql`

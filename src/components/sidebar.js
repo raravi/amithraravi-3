@@ -159,7 +159,7 @@ const Sidebar = ({ layout, category }) => {
           </div>
           <div className={styles.sidebar_latestPosts}>
             {sidePosts.edges.map(({ node }) => (
-              <div>
+              <div key={`${node.fields.slug}`}>
                 <article className={styles.sidebar_tile}>
                   <a
                     href={`/articles/${otherCategory}/${node.fields.slug.slice(12)}`}

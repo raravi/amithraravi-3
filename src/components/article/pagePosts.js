@@ -8,7 +8,7 @@ const PagePosts = ({ posts, siteUrl, postCategory }) => (
     <ul className={styles.thGrid}>
       {
         posts.edges.map(({ node }) => (
-          <li>
+          <li key={`${node.fields.slug}`}>
             <a
               href={`${siteUrl}/articles/${postCategory}/${node.fields.slug.slice(12)}`}
               title={node.frontmatter.title}

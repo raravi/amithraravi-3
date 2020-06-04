@@ -20,7 +20,11 @@ const GridLayout = ({ children, layout, category }) => (
 GridLayout.propTypes = {
   children: PropTypes.node.isRequired,
   layout: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
+  category: PropTypes.string,
+};
+
+GridLayout.defaultProps = {
+  category: '',
 };
 
 export default GridLayout;

@@ -37,7 +37,37 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `);
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  const comments = await graphql(`
+    query {
+      comments: allMarkdownRemark(
+        sort: {
+          fields: [frontmatter___replying_to, frontmatter___date_created]
+        }, 
+        filter: {
+          fields: {
+            sourceName: {eq: "comments"}
+          }
+        }
+      ) {
+        nodes {
+          fields {
+            slug
+          }
+          frontmatter {
+            _id
+            date_created
+            email
+            emailorig
+            name
+            replying_to
+            url
+          }
+          html
+        }
+      }
+    }
+  `);
+  result.data.allMarkdownRemark.edges.forEach(async ({ node }) => {
     let pageSlug;
     if (node.fields.sourceName === 'posts') {
       const slug = node.fields.slug.slice(12);
@@ -46,10 +76,9 @@ exports.createPages = async ({ graphql, actions }) => {
         path: pageSlug,
         component: path.resolve('./src/templates/article.js'),
         context: {
-          // Data passed to context is available
-          // in page queries as GraphQL variables.
           slug: node.fields.slug,
           category: node.frontmatter.categories[1],
+          comments,
         },
       });
     } else if (node.fields.sourceName === 'portfolio') {
@@ -59,19 +88,15 @@ exports.createPages = async ({ graphql, actions }) => {
         path: pageSlug,
         component: path.resolve('./src/templates/media.js'),
         context: {
-          // Data passed to context is available
-          // in page queries as GraphQL variables.
           slug: node.fields.slug,
         },
       });
-    } else {
+    } else if (node.fields.sourceName === 'pages') {
       pageSlug = node.fields.slug;
       createPage({
         path: pageSlug,
         component: path.resolve('./src/templates/media.js'),
         context: {
-          // Data passed to context is available
-          // in page queries as GraphQL variables.
           slug: node.fields.slug,
         },
       });

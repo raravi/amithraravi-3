@@ -104,6 +104,13 @@ module.exports = {
         path: `${__dirname}/src/portfolio/`,
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'comments',
+        path: `${__dirname}/src/comments/`,
+      },
+    },
     'gatsby-transformer-yaml',
     {
       resolve: 'gatsby-source-filesystem',
