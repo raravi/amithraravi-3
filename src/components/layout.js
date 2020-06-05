@@ -4,6 +4,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
+/* global document, window */
 
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
@@ -26,21 +27,16 @@ const Layout = ({ children }) => {
   `);
 
   function stickyHeading() {
-    // eslint-disable-next-line no-undef
     const scroll = window.pageYOffset || document.body.scrollTop;
 
-    // eslint-disable-next-line no-undef
     const header = document.querySelector(`.${stylesHeader.topMenu}`);
     const headerDiv1 = header.querySelector('.div-20-high');
     const headerDiv2 = header.querySelector('.line-red');
 
-    // eslint-disable-next-line no-undef
     // const menuButton = document.querySelector(".sliding-menu-button");
 
     /* const windowWidth = Math.max(
-      // eslint-disable-next-line no-undef
       document.documentElement.clientWidth,
-      // eslint-disable-next-line no-undef
       window.innerWidth || 0,
     );
 
@@ -72,32 +68,24 @@ const Layout = ({ children }) => {
   }
 
   useEffect(() => {
-    // eslint-disable-next-line no-undef
     if (window.runOnce === undefined) {
-      // eslint-disable-next-line no-undef
       const topMenuItems = document.querySelectorAll(`.${stylesHeader.topMenu_item}`);
       topMenuItems[0].classList.add('topMenu_item___animation');
       topMenuItems[1].classList.add('topMenu_item___animation');
 
-      // eslint-disable-next-line no-undef
       const topMenuSiteTitle = document.querySelector(`.${stylesHeader.topMenu_siteTitle}`);
       topMenuSiteTitle.classList.add('topMenu_siteTitle___animation');
 
-      // eslint-disable-next-line no-undef
       window.runOnce = true;
     }
   }, []);
 
   useEffect(() => {
-    // eslint-disable-next-line no-undef
     window.addEventListener('load', stickyHeading);
-    // eslint-disable-next-line no-undef
     window.addEventListener('scroll', stickyHeading);
 
     return () => {
-      // eslint-disable-next-line no-undef
       window.removeEventListener('load', stickyHeading);
-      // eslint-disable-next-line no-undef
       window.removeEventListener('scroll', stickyHeading);
     };
   });

@@ -1,8 +1,82 @@
-import React from 'react';
+/* global document */
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import PageComment from './pageComment';
 import PageCommentForm from './pageCommentForm';
 import styles from '../../styles/pageComments.module.css';
+import stylesComment from '../../styles/pageComment.module.css';
+import stylesCommentForm from '../../styles/pageCommentForm.module.css';
+
+/**
+ * 'Comment Reply' to each comment.
+ * This script moves the Add Comment section to the position below the appropriate comment.
+ * Modified from Wordpress https://core.svn.wordpress.org/trunk/wp-includes/js/comment-reply.js
+ * Released under the GNU General Public License - https://wordpress.org/about/gpl/
+ */
+const addComment = {
+  moveForm(commId, parentId, respondId, postId) {
+    let div;
+    const t = this;
+    const comm = t.I(commId);
+    const respond = t.I(respondId);
+    const cancel = t.I(stylesCommentForm.cancelCommentReplyLink);
+    const parent = t.I('comment-replying-to');
+    const post = t.I('comment-post-slug');
+    const commentForm = respond.getElementsByTagName('form')[0];
+
+    if (!comm || !respond || !cancel || !parent || !commentForm) {
+      // Moveform: Error 1 - return
+      return false;
+    }
+
+    t.respondId = respondId;
+
+    if (!t.I('sm-temp-form-div')) {
+      div = document.createElement('div');
+      div.id = 'sm-temp-form-div';
+      div.style.display = 'none';
+      respond.parentNode.insertBefore(div, respond);
+    }
+
+    comm.parentNode.insertBefore(respond, comm.nextSibling);
+    if (post && postId) {
+      post.value = postId;
+    }
+    parent.value = parentId;
+    cancel.style.display = '';
+
+    // eslint-disable-next-line func-names
+    cancel.onclick = function () {
+      const tInner = addComment;
+      const temp = tInner.I('sm-temp-form-div');
+      const respondInner = tInner.I(tInner.respondId);
+
+      if (!temp || !respondInner) {
+        // Cancel: Error 2 - return
+        return false;
+      }
+
+      tInner.I('comment-replying-to').value = '0';
+      temp.parentNode.insertBefore(respondInner, temp);
+      temp.parentNode.removeChild(temp);
+      this.style.display = 'none';
+      this.onclick = null;
+      // Cancel: Success - return
+      return false;
+    };
+
+    // Set initial focus to the first form focusable element.
+    document.getElementById('comment-form-message').focus();
+
+    // Return false so that the page is not redirected to HREF.
+    // Moveform: Success - return
+    return false;
+  },
+
+  I(id) {
+    return document.getElementById(id);
+  },
+};
 
 const PageComments = ({ comments, path, siteUrl }) => {
   const pageComments = [];
@@ -34,6 +108,21 @@ const PageComments = ({ comments, path, siteUrl }) => {
       }
     }
   }
+
+  useEffect(() => {
+    const commentsWithReplies = document.getElementsByClassName(`${stylesComment.comment_reply}`);
+    Array.prototype.forEach.call(commentsWithReplies, (comment) => {
+      comment.addEventListener('click', () => {
+        const aTag = comment.getElementsByTagName('A')[0];
+        addComment.moveForm(
+          aTag.dataset.comment,
+          aTag.dataset.index,
+          aTag.dataset.respond,
+          aTag.dataset.slug,
+        );
+      });
+    });
+  }, []);
 
   return (
     <section>
