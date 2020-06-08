@@ -1,0 +1,238 @@
+/**
+ * Article - Header Section
+ */
+.articleHeader {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+  padding-left: 10px;
+}
+
+.articleHeader_pageTitle {
+  padding-top: 10px;
+  flex: 100%;
+}
+
+@media screen and (--small) {
+  .articleHeader_pageTitle {
+    padding-top: 4px;
+    flex: 50%;
+  }
+}
+
+.articleHeader_pageTitle h2 {
+  margin-top: 8px;
+}
+
+.filtersButton {
+  background: var(--white);
+  color: var(--boston-red);
+  border: none;
+  position: relative;
+  height: 30px;
+  font-size: 0.9em;
+  padding: 0 1em;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+@media screen and (--micro350) {
+  .filtersButton {
+    height: 40px;
+    font-size: 1.1em;
+  }
+}
+
+.filtersButton:before,
+.filtersButton:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 100%;
+  background: var(--boston-red);
+  transition: 200ms ease all;
+}
+
+.filtersButton:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+
+.filtersButton:hover {
+  background: #ffeded;
+  transition: 400ms ease all;
+}
+
+.filtersButton:hover:before,
+.filtersButton:hover:after {
+  height: 3px;
+  transition: 400ms ease all;
+}
+
+.filtersButton:active,
+.filtersButton.isChecked {
+  background-color: var(--boston-red);
+  text-decoration: none;
+}
+
+.filtersButton.isChecked {
+  color: white;
+  text-shadow: 0 -1px hsla(0, 0%, 0%, 0.4);
+}
+
+.filtersButton:active {
+  box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.8);
+}
+
+.filtersButtonGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  flex: 100%;
+}
+
+@media screen and (--small) {
+  .filtersButtonGroup {
+    padding-top: 8px;
+    flex: 50%;
+    justify-content: flex-end;
+  }
+}
+
+.filtersButtonGroup:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/**
+ * Article - Grid Section
+ */
+.articlesTilesGrid {
+  /* border: 1px solid black; /* For debugging */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.articleTile {
+  /* opacity: 0; */
+  border-radius: 10px 10px 50px/40px 10px;
+  width: 100%;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.articleTile:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.articleTile:hover .articleTile_postTitle {
+  color: var(--boston-red-light-5);
+}
+
+.articleTile:hover .articleTile_postTeaser:after {
+  background: rgba(52, 52, 52, 0.05);
+}
+
+.articleTile.hidden {
+  display: none;
+}
+
+.articleTile a {
+  border-bottom: none;
+}
+
+.articleTile_entryDate,
+.articleTile_postTitle,
+.articleTile_postExcerpt {
+  padding: 0 10px;
+}
+
+.articleTile_postTeaser {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 100%;
+  max-height: 180px;
+  overflow-y: hidden;
+  position: relative;
+  display: block;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.articleTile_postTeaser:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(52, 52, 52, 0);
+  pointer-events: none;
+  transition: background 0.3s;
+}
+
+.articleTile_entryDate {
+  margin-top: 10px;
+  /* @include font-size(12, no); */
+  font-size: 12px;
+  line-height: 2; /*24 / 12;*/
+  margin-bottom: 0;
+  color: var(--text-color-light-25);
+}
+
+.articleTile_postTitle {
+  margin-top: 8px;
+  /* @include font-size(18, no); */
+  font-size: 18px;
+  line-height: 1.33; /*24 / 18;*/
+  margin-bottom: 0;
+  font-family: var(--grid-title-font);
+  color: var(--text-color);
+}
+
+.articleTile_postExcerpt {
+  margin-top: 10px;
+  /* @include font-size(14); */
+  font-size: 14px;
+  line-height: 1.714; /*24 / 14;*/
+  margin-bottom: 24px;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+.col {
+  display: flex;
+  flex: 23.05%;
+  max-width: 23.05%;
+  margin: 0px 10px 35px;
+}
+@media screen and (max-width: 1120px) {
+  .col {
+    flex: 30.95%;
+    max-width: 30.95%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .col {
+    flex: 45.3%; /* There is a side-effect to figure out here!! This should ideally be 50%. But right now, 50% will not display items in 2nd column properly on Firefox. (I know why :)) */
+    max-width: 45.3%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .col {
+    flex: 100%;
+    max-width: 400px;
+  }
+}

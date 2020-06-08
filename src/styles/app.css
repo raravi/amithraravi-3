@@ -196,6 +196,7 @@
   --boston-red-light-5: hsl(0, 100%, 45%);
 
   --text-color: hsl(60, 1%, 19%);
+  --text-color-light-25: hsl(60, 1%, 44%);
   --caption-color: hsl(60, 0%, 39%);
   --primary-color: var(--black);
   --primary-color-light-10: hsl(0, 0%, 10%);
