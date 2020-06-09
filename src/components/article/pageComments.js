@@ -132,7 +132,6 @@ const PageComments = ({ comments, path, siteUrl }) => {
             <h4 className={styles.comments_header}>
               {`${pageCommentsSorted.length} Comment(s)`}
             </h4>
-            <div className="div-5-high" />
             {
               pageCommentsSorted.map((comment) => {
                 if (comment.frontmatter.replying_to === '0') {

@@ -178,7 +178,6 @@ const Sidebar = ({ layout, category }) => {
               </div>
             ))}
           </div>
-          <div className="div-10-high" />
           <div className="line-red" />
         </>
       )}

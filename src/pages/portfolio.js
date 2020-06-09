@@ -47,7 +47,6 @@ const PortfolioPage = () => {
           <h2>Portfolio</h2>
         </div>
       </div>
-      <div className="div-5-high" />
       <div className={styles.portfolioTilesGrid}>
         {
           portfolio.nodes.map((node) => (
