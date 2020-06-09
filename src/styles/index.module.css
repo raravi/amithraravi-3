@@ -1,0 +1,251 @@
+/**
+ * Main Page - Grid Content
+ */
+.mainBox {
+  /* border: 1px solid #000;  /* For debugging */
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainBox_row {
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 40px;
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.mainBox_row a {
+  text-decoration: none;
+}
+
+.mainBox_row .mainBox_image {
+  text-align: center;
+  color: var(--white);
+  text-shadow: 1px 1px var(--text-color);
+  background-size: 100% 100%;
+  min-height: 250px;
+}
+
+.mainBox_row___forward {
+  flex-direction: row;
+}
+
+.mainBox_row___reverse {
+  flex-direction: row-reverse;
+}
+
+.mainBox_col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 100%;
+  max-width: 100%;
+}
+@media screen and (--medium750) {
+  .mainBox_col {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+.mainBox_gridTitle {
+  padding: 1em;
+}
+@media screen and (--medium) {
+  .mainBox_gridTitle {
+    padding: 2em;
+  }
+}
+@media screen and (--large) {
+  .mainBox_gridTitle {
+    padding: 3em;
+  }
+}
+
+.mainBox_gridTitle h1 {
+  text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.6);
+  color: var(--white-dark-2);
+  font-family: var(--heading-font);
+  /* @include font-size(48); */
+  font-size: 48px;
+  margin-top: 40px;
+  margin-bottom: 24px;
+}
+@media screen and (--medium) {
+  .mainBox_gridTitle h1 {
+    /* @include font-size(60); */
+    font-size: 60px;
+  }
+}
+@media screen and (--large) {
+  .mainBox_gridTitle h1 {
+    /* @include font-size(60); */
+    font-size: 60px;
+  }
+}
+
+.mainBox_gridContent {
+  padding-left: 15px;
+  padding-right: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.mainBox_gridContent li {
+  color: var(--text-color-light-17);
+  /* @include font-size(18); */
+  font-size: 18px;
+  line-height: 1.33;
+  margin-bottom: 24px;
+}
+@media screen and (--medium) {
+  .mainBox_gridContent li {
+    /* @include font-size(20); */
+    font-size: 20px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+}
+@media screen and (--large) {
+  .mainBox_gridContent li {
+    /* @include font-size(20); */
+    font-size: 20px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+}
+
+/**
+ * Main Page - About Me Section
+ */
+.mainAboutMe {
+  padding: 20px;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mainAboutMe_col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 100%;
+  max-width: 100%;
+}
+
+@media screen and (--small) {
+  .mainAboutMe_col {
+    flex: 33%;
+    max-width: 33%;
+  }
+}
+
+.mainAboutMe_bioPic {
+  border-radius: 50%;
+  padding-right: 20px;
+}
+
+.mainAboutMe_text {
+  text-align: center;
+}
+
+.mainAboutMe_sayHi {
+  /* @include font-size(20, no); */
+  font-size: 20px;
+  line-height: 1.2;
+  margin-bottom: 0;
+  margin-top: 20px;
+  font-family: var(--hi-font);
+  color: var(--boston-red);
+}
+.mainAboutMe_sayHiText {
+  /* @include font-size(18, yes, 28); */
+  font-size: 18px;
+  line-height: 1.556;
+  margin-bottom: 24px;
+  margin-top: 18px;
+}
+@media screen and (--small) {
+  .mainAboutMe_sayHiText {
+    /* @include font-size(16, yes, 26); */
+    font-size: 16px;
+    line-height: 1.625;
+    margin-bottom: 24px;
+  }
+}
+@media screen and (--medium) {
+  .mainAboutMe_sayHiText {
+    /* @include font-size(18, yes, 28); */
+    font-size: 18px;
+    line-height: 1.556;
+    margin-bottom: 24px;
+  }
+}
+
+.mainAboutMe_text a {
+  /* @include font-size(16, no); */
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 0;
+  text-decoration: none;
+  border-bottom: none;
+  color: var(--boston-red);
+}
+
+.mainAboutMe_socialIcon {
+  margin: 0px 6px;
+}
+
+.mainAboutMe_icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.mainAboutMe_iconLinkedin {
+  font-size: 32px;
+  color: var(--black);
+}
+.mainAboutMe_iconLinkedin:hover {
+  color: var(--linkedin-color);
+}
+
+.mainAboutMe_iconInstagram {
+  font-size: 32px;
+  color: var(--black);
+}
+.mainAboutMe_iconInstagram:hover {
+  color: var(--instagram-color);
+}
+
+.mainAboutMe_iconGithub {
+  font-size: 32px;
+  color: var(--black);
+}
+.mainAboutMe_iconGithub:hover {
+  color: var(--github-color);
+}
+
+.mainAboutMe_iconFacebook {
+  font-size: 32px;
+  color: var(--black);
+}
+.mainAboutMe_iconFacebook:hover {
+  color: var(--facebook-color);
+}
+
+.mainAboutMe_text h5 {
+  margin-bottom: 20px;
+}
+
+.mainAboutMe_textContactMe {
+  margin-top: 10px;
+}

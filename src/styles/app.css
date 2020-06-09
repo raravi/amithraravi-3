@@ -186,6 +186,7 @@
   --doc-line-height-onefourth: 6px;
 
   --white: #FFF;
+  --white-dark-2: hsl(0, 0%, 98%);
   --black: hsl(0, 0%, 0%);
   --black-lighter-15: hsl(0, 0%, 15%);
   --black-lighter-35: hsl(0, 0%, 35%);
@@ -196,6 +197,7 @@
   --boston-red-light-5: hsl(0, 100%, 45%);
 
   --text-color: hsl(60, 1%, 19%);
+  --text-color-light-17: hsl(60, 1%, 36%);
   --text-color-light-25: hsl(60, 1%, 44%);
   --caption-color: hsl(60, 0%, 39%);
   --primary-color: var(--black);
@@ -239,6 +241,7 @@
 @custom-media --medium750 (min-width: 750px);
 @custom-media --medium (min-width: 900px);
 @custom-media --medium1050 (min-width: 1050px);
+@custom-media --large (min-width: 1280px);
 
 /**
  * USER RESETS
