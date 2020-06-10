@@ -117,7 +117,7 @@ const ArticlesPage = () => {
               >
                 <p className={styles.articleTile_postTeaser}>
                   <img
-                    src={`/images/${node.frontmatter.teaser}`}
+                    src={`${site.siteMetadata.siteUrl}/images/${node.frontmatter.teaser}`}
                     alt="teaser"
                   />
                 </p>

@@ -16,7 +16,7 @@ import styles from '../styles/layout.module.css';
 import stylesHeader from '../styles/header.module.css';
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
+  const { site } = useStaticQuery(graphql`
     query SiteUrlQuery {
       site {
         siteMetadata {
@@ -92,13 +92,13 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteUrl={data.site.siteMetadata.siteUrl} />
+      <Header siteUrl={site.siteMetadata.siteUrl} />
       <div
         className={styles.container}
       >
         <div className="inner-wrap">
           {children}
-          <Footer siteUrl={data.site.siteMetadata.siteUrl} />
+          <Footer siteUrl={site.siteMetadata.siteUrl} />
         </div>
       </div>
     </>

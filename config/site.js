@@ -1,3 +1,3 @@
 module.exports = {
-  siteUrl: 'http://localhost:8000',
+  siteUrl: 'http://localhost:5000',
 };

@@ -11,6 +11,7 @@ const IndexPage = () => {
       query {
         site {
           siteMetadata {
+            siteUrl
             email
             facebook {
               url
@@ -129,7 +130,7 @@ const IndexPage = () => {
       <div className={styles.mainAboutMe}>
         <div className={styles.mainAboutMe_col}>
           <img
-            src="/images/amith-bio-300x300.jpg"
+            src={`${site.siteMetadata.siteUrl}/images/amith-bio-300x300.jpg`}
             className={styles.mainAboutMe_bioPic}
             alt="Avatar"
           />
@@ -186,7 +187,6 @@ const IndexPage = () => {
               </svg>
             </a>
           </div>
-          <div className="div-10-high" />
           <div className={`${styles.mainAboutMe_text} ${styles.mainAboutMe_textContactMe}`}>
             <a href={`mailto:${site.siteMetadata.email}`}><i>contact me</i></a>
           </div>

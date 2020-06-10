@@ -59,6 +59,7 @@ const Sidebar = ({ layout, category }) => {
       }
       site {
         siteMetadata {
+          siteUrl
           email
           facebook {
             url
@@ -88,7 +89,7 @@ const Sidebar = ({ layout, category }) => {
     <>
       <div className={styles.sidebar_row}>
         <img
-          src="/images/amith-bio-300x300.jpg"
+          src={`${site.siteMetadata.siteUrl}/images/amith-bio-300x300.jpg`}
           className={styles.bioPic}
           alt="Avatar"
         />
@@ -162,12 +163,12 @@ const Sidebar = ({ layout, category }) => {
               <div key={`${node.fields.slug}`}>
                 <article className={styles.sidebar_tile}>
                   <a
-                    href={`/articles/${otherCategory}/${node.fields.slug.slice(12)}`}
+                    href={`${site.siteMetadata.siteUrl}/articles/${otherCategory}/${node.fields.slug.slice(12)}`}
                     title={node.frontmatter.title}
                   >
                     <p className={styles.postTeaser}>
                       <img
-                        src={`/images/${node.frontmatter.teaser}`}
+                        src={`${site.siteMetadata.siteUrl}/images/${node.frontmatter.teaser}`}
                         alt="teaser"
                       />
                     </p>
@@ -187,13 +188,13 @@ const Sidebar = ({ layout, category }) => {
       <div className={styles.sidebar_bloggerResources}>
         <p>
           <a
-            href="https://www.amithraravi.com/articles/tech/your-own-website-part-1/"
+            href={`${site.siteMetadata.siteUrl}/articles/tech/your-own-website-part-1/`}
           >
             ➤ Your own website - Part I
           </a>
           <br />
           <a
-            href="https://www.amithraravi.com/articles/tech/your-own-website-part-2/"
+            href={`${site.siteMetadata.siteUrl}/articles/tech/your-own-website-part-2/`}
           >
             ➤ Your own website - Part II
           </a>

@@ -58,7 +58,7 @@ const PortfolioPage = () => {
               >
                 <p className={styles.postTeaser}>
                   <img
-                    src={`/images/${node.frontmatter.teaser}`}
+                    src={`${site.siteMetadata.siteUrl}/images/${node.frontmatter.teaser}`}
                     alt="teaser"
                   />
                 </p>

@@ -10,7 +10,7 @@ const PageFooter = ({
     <footer className={styles.article_pageFooter}>
       <div className={styles.article_authorImage}>
         <img
-          src={`/images/${avatar}`}
+          src={`${siteUrl}/images/${avatar}`}
           alt={name}
         />
       </div>

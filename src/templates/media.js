@@ -7,6 +7,7 @@ import styles from '../styles/media.module.css';
 
 export default function MediaTemplate({ data }) {
   const post = data.markdownRemark;
+  const { siteUrl } = data.site.siteMetadata;
 
   useEffect(() => {
     // eslint-disable-next-line no-undef
@@ -27,7 +28,7 @@ export default function MediaTemplate({ data }) {
         && (
         <div className={styles.media_pageImage}>
           <img
-            src={`/images/${post.frontmatter.image}`}
+            src={`${siteUrl}/images/${post.frontmatter.image}`}
             alt={post.frontmatter.title}
           />
         </div>
@@ -55,6 +56,11 @@ export const query = graphql`
       frontmatter {
         title,
         image
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
       }
     }
   }
