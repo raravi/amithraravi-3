@@ -294,6 +294,20 @@
   }
 }
 
+.notice--success {
+  margin: 2em 0;
+  padding: 1em;
+  background-color: #ecf7ee;
+  border-left: 0.25em solid #a1d7aa;
+}
+
+.notice--danger {
+  margin: 2em 0;
+  padding: 1em;
+  background-color: #fbecec;
+  border-left: 0.25em solid #eba0a0;
+}
+
 /**
  * Animation
  */
