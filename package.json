@@ -44,7 +44,10 @@
     "prettier": "2.0.5"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "react",
+    "blog",
+    "portfolio"
   ],
   "license": "MIT",
   "scripts": {
