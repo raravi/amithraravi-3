@@ -2,7 +2,7 @@
   "name": "amithraravi-3",
   "private": true,
   "description": "My personal website with Gatsby!",
-  "version": "0.1.0",
+  "version": "0.9.0",
   "author": "Amith Raravi <amith.raravi@gmail.com>",
   "dependencies": {
     "gatsby": "^2.21.37",
