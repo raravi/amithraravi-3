@@ -22,7 +22,6 @@ const PageCommentForm = ({ path, siteUrl }) => {
     form
       .addEventListener('submit', (event) => {
         event.preventDefault();
-        // const form = this;
 
         form.classList.add('disabled');
         document.querySelector('#comment-form-submit').textContent = 'Loading...';

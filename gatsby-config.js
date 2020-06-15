@@ -3,46 +3,46 @@ const site = require('./config/site');
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `${site.siteUrl}`,
-    title: 'Amith Raravi',
-    description: 'Reader. Coder. Play a bit of chess, a movie here, a road-trip there :)',
-    author: '@amith_raravi',
-    email: 'amith.raravi@gmail.com',
+    siteUrl: `${site.url}`,
+    title: `${site.title}`,
+    description: `${site.description}`,
+    author: `${site.author}`,
+    email: `${site.email}`,
     twitter: {
-      url: 'https://www.twitter.com',
-      username: 'amith_raravi',
+      url: `${site.twitter.url}`,
+      username: `${site.twitter.username}`,
     },
     facebook: {
-      url: 'https://www.facebook.com',
-      username: 'amith.raravi',
+      url: `${site.facebook.url}`,
+      username: `${site.facebook.username}`,
     },
     linkedin: {
-      url: 'https://www.linkedin.com',
-      username: 'in/amith-raravi-82b525139',
+      url: `${site.linkedin.url}`,
+      username: `${site.linkedin.username}`,
     },
     googleplus: {
-      url: 'https://plus.google.com',
-      username: '+AmithRaravi',
+      url: `${site.googleplus.url}`,
+      username: `${site.googleplus.username}`,
     },
     github: {
-      url: 'https://github.com',
-      username: 'raravi',
+      url: `${site.github.url}`,
+      username: `${site.github.username}`,
     },
     instagram: {
-      url: 'https://www.instagram.com',
-      username: 'the.raravi.chronicles',
+      url: `${site.instagram.url}`,
+      username: `${site.instagram.username}`,
     },
     xda: {
-      url: 'https://forum.xda-developers.com',
-      username: 'member.php?u=4214466',
+      url: `${site.xda.url}`,
+      username: `${site.xda.username}`,
     },
     goodreads: {
-      url: 'https://www.goodreads.com',
-      username: 'user/show/12212283-amith-raravi',
+      url: `${site.goodreads.url}`,
+      username: `${site.goodreads.username}`,
     },
     runkeeper: {
-      url: 'https://runkeeper.com',
-      username: 'user/raravi',
+      url: `${site.runkeeper.url}`,
+      username: `${site.runkeeper.username}`,
     },
   },
   plugins: [
@@ -147,7 +147,6 @@ module.exports = {
         background_color: '#F9D64C',
         theme_color: '#F9D64C',
         display: 'minimal-ui',
-        // icon: `src/images/icon-512x512.png`, // This path is relative to the root of the site.
         icons: [
           {
             src: '/icons/icon-72x72.png',
@@ -192,8 +191,7 @@ module.exports = {
         ],
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
+    // this plugin enables Progressive Web App + Offline functionality
     'gatsby-plugin-offline',
   ],
 };
