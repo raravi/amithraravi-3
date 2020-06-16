@@ -16,6 +16,7 @@ export default function MediaTemplate({ data }) {
       window.scroll({
         top: 0,
         left: 0,
+        behavior: 'smooth',
       });
     }
   }, []);
