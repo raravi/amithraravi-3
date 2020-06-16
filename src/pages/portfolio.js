@@ -50,7 +50,7 @@ const PortfolioPage = () => {
       <div className={styles.portfolioTilesGrid}>
         {
           portfolio.nodes.map((node) => (
-            <article className={`${styles.portfolioTile} ${styles.col}`}>
+            <article key={node.id} className={`${styles.portfolioTile} ${styles.col}`}>
               <a
                 href={`${site.siteMetadata.siteUrl}/portfolio/${node.fields.slug.slice(12)}`}
                 title={node.frontmatter.title}

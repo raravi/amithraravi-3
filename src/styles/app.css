@@ -221,6 +221,12 @@
   --gutter-threefourth: 15px;
   --gutter-onetenth: 2px;
   --button-size: 30px;
+  --button-size-point1: 3px;
+  --button-size-point7: 21px;
+  --button-size-point8: 24px;
+  --button-size-1point6: 48px;
+  --button-size-1point75: 52px;
+  --button-size-double: 60px;
   --masthead-height: 60px;
   --masthead-height-half: 30px;
   --masthead-height-onefourth: 15px;
@@ -259,6 +265,16 @@
 /**
  * Global Classes
  */
+
+/* No scrollbars */
+.no-scroll {
+  overflow: hidden;
+}
+
+.slide {
+  transform: translateX(-100%);
+}
+
 .inner-wrap {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -322,11 +338,25 @@
   }
 }
 
+@keyframes fade-in-menu {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .topMenu_siteTitle___animation {
   animation: slide-down 0.5s ease-out 0.75s 1 normal both;
 }
+
 .topMenu_item___animation {
   animation: slide-down 0.5s ease-out 1.25s 1 normal both;
+}
+
+.slidingMenuButton___animation {
+  animation: fade-in-menu 1s ease-out 1.5s 1 normal both;
 }
 
 /**
@@ -361,30 +391,6 @@ h6 {
   /* Fix the character spacing for headings */
   text-rendering: optimizeLegibility;
 }
-/*h1 {
-  /* @include font-size(36);
-  font-size: 36px;
-  line-height: 2 * 24 / 36;
-  margin-bottom: 24px;
-}
-h2 {
-  /* @include font-size(32); 
-  font-size: 32px;
-  line-height: 2 * 24 / 32;
-  margin-bottom: 24px;
-}
-h3 {
-  /* @include font-size(28); 
-  font-size: 28px;
-  line-height: 2 * 24 / 28;
-  margin-bottom: 24px;
-}
-h4 {
-  /* @include font-size(24); 
-  font-size: 24px;
-  line-height: 1;
-  margin-bottom: 24px;
-}*/
 h1 {
   font-family: var(--article-title-font);
   /* @include font-size(24, yes, 34); */

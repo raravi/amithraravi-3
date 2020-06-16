@@ -8,6 +8,7 @@ module.exports = {
     description: `${site.description}`,
     author: `${site.author}`,
     email: `${site.email}`,
+    imagekitUrl: `${site.imagekitUrl}`,
     twitter: {
       url: `${site.twitter.url}`,
       username: `${site.twitter.username}`,

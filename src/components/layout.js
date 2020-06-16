@@ -1,23 +1,18 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
 /* global document, window */
-
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import Header from './header';
+import SlidingMenu from './slidingMenu';
 import Footer from './footer';
 import '../styles/app.css';
 import styles from '../styles/layout.module.css';
 import stylesHeader from '../styles/header.module.css';
+import stylesSlidingMenu from '../styles/slidingMenu.module.css';
 
 const Layout = ({ children }) => {
   const { site } = useStaticQuery(graphql`
-    query SiteUrlQuery {
+    query {
       site {
         siteMetadata {
           siteUrl
@@ -33,9 +28,9 @@ const Layout = ({ children }) => {
     const headerDiv1 = header.querySelector('.div-20-high');
     const headerDiv2 = header.querySelector('.line-red');
 
-    // const menuButton = document.querySelector(".sliding-menu-button");
+    const menuButton = document.querySelector('#js-menu-trigger');
 
-    /* const windowWidth = Math.max(
+    const windowWidth = Math.max(
       document.documentElement.clientWidth,
       window.innerWidth || 0,
     );
@@ -46,7 +41,7 @@ const Layout = ({ children }) => {
     }
     if (windowWidth < 350) {
       menuButtonTop = 13;
-    } */
+    }
 
     if (scroll >= 10) {
       header.style.paddingTop = '10px';
@@ -55,7 +50,7 @@ const Layout = ({ children }) => {
       header.style.boxShadow = '0 6px 20px 0 rgba(0, 0, 0, 0.19)';
       headerDiv1.style.display = 'none';
       headerDiv2.style.display = 'none';
-      // menuButton.style.top = menuButtonTop + "px";
+      menuButton.style.top = `${menuButtonTop}px`;
     } else {
       header.style.paddingTop = '';
       header.style.paddingBottom = '';
@@ -63,7 +58,7 @@ const Layout = ({ children }) => {
       header.style.boxShadow = '';
       headerDiv1.style.display = '';
       headerDiv2.style.display = '';
-      // menuButton.style.top = "";
+      menuButton.style.top = '';
     }
   }
 
@@ -75,6 +70,9 @@ const Layout = ({ children }) => {
 
       const topMenuSiteTitle = document.querySelector(`.${stylesHeader.topMenu_siteTitle}`);
       topMenuSiteTitle.classList.add('topMenu_siteTitle___animation');
+
+      const slidingMenuButton = document.querySelector(`.${stylesSlidingMenu.slidingMenuButton}`);
+      slidingMenuButton.classList.add('slidingMenuButton___animation');
 
       window.runOnce = true;
     }
@@ -93,6 +91,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteUrl={site.siteMetadata.siteUrl} />
+      <SlidingMenu />
       <div
         className={styles.container}
       >

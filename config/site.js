@@ -4,6 +4,7 @@ module.exports = {
   description: 'Reader. Coder. Play a bit of chess, a movie here, a road-trip there :)',
   author: '@amith_raravi',
   email: 'amith.raravi@gmail.com',
+  imagekitUrl: 'https://ik.imagekit.io/raravi',
   twitter: {
     url: 'https://www.twitter.com',
     username: 'amith_raravi',

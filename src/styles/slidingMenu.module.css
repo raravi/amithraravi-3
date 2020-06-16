@@ -1,0 +1,239 @@
+/**
+ * Sliding Menu Content
+ */
+.slidingMenuContent {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  padding: 22px 0;
+  visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateX(100%);
+  transition: all 500ms cubic-bezier(0.86, 0.01, 0.77, 0.78);
+  background: var(--black);
+  z-index: 20;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media screen and (--small) {
+  .slidingMenuContent {
+    display: none;
+  }
+}
+
+.slidingMenuContent.isVisible {
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.slidingMenuContent h5 {
+  margin: 10px 20% 0 10%;
+  color: var(--white);
+  font-size: 20px;
+  line-height: 1.33;
+}
+
+.slidingMenuContent h5 span {
+  margin-top: 14px;
+  display: block;
+  color: #ffd700;
+  font-size: 42px;
+  line-height: 1;
+  margin-bottom: 24px;
+  font-family: var(--grid-title-font);
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.slidingMenuContent ul,
+.slidingMenuContent li {
+  list-style: none;
+}
+.slidingMenuContent ul {
+  margin: 0 10%;
+}
+.slidingMenuContent li {
+  display: block;
+  position: relative;
+  padding-bottom: 1em;
+  min-height: 70px;
+}
+
+.menuItem a {
+  display: block;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.menuItem a:hover .teaser {
+  opacity: 1;
+}
+.menuItem a:hover .excerpt {
+  color: var(--white);
+}
+.menuItem a:hover .title {
+  color: var(--red);
+}
+
+.menuItem .teaser {
+  position: absolute;
+  left: 0;
+  margin-bottom: 0;
+  width: 100px;
+  border: 2px solid var(--white);
+  margin-bottom: var(--gutter-half);
+  opacity: 0.6;
+}
+
+.menuItem .title {
+  display: block;
+  margin-left: 110px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: var(--menu-font);
+  color: var(--boston-red-light-5);
+  font-size: 24px;
+  line-height: 1;
+}
+
+.menuItem .excerpt {
+  margin-top: 0;
+  margin-left: 110px;
+  color: grey;
+  font-size: 14px;
+  line-height: 1.714;
+  margin-bottom: 0;
+}
+
+/**
+ * Sliding Menu Button
+ */
+.slidingMenuButton {
+  position: fixed;
+  transform: translateZ(0);
+  backface-visibility: hidden; /* fix scroll jank */
+  top: 22px;
+  right: var(--gutter-half);
+  display: block;
+  width: var(--button-size-1point6);
+  height: var(--button-size-1point6);
+  background: transparent;
+  outline: 0;
+  border: 2.5px solid transparent;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 500ms cubic-bezier(0.86, 0.01, 0.77, 0.78);
+}
+
+@media screen and (--micro350) {
+  .slidingMenuButton {
+    top: var(--gutter);
+    right: var(--gutter-threefourth);
+    width: var(--button-size-1point75);
+    height: var(--button-size-1point75);
+  }
+}
+
+@media screen and (--small450) {
+  .slidingMenuButton {
+    top: 17px;
+    width: var(--button-size-double);
+    height: var(--button-size-double);  
+  }
+}
+
+@media screen and (--small) {
+  .slidingMenuButton {
+    display: none;
+  }
+}
+
+.slidingMenuButton.slide {
+  background: var(--boston-red);
+}
+
+.navLines {
+  display: inline-block;
+  width: var(--button-size-point7);
+  height: var(--button-size-point1);
+  background: var(--primary-color);
+  transition: 0.3s;
+  position: relative;
+  top: -2px;
+}
+
+.navLines:before,
+.navLines:after {
+  display: inline-block;
+  width: var(--button-size-point7);
+  height: var(--button-size-point1);
+  background: var(--primary-color);
+  transition: 0.3s;
+  position: absolute;
+  left: 0;
+  content: "";
+  transform-origin: 2px center;
+}
+.navLines:before {
+  top: 8px;
+}
+.navLines:after {
+  top: -8px;
+}
+
+@media screen and (--micro350) {
+  .navLines,
+  .navLines:before,
+  .navLines:after {
+    width: var(--button-size-point8);
+  }
+}
+@media screen and (--small450) {
+  .navLines,
+  .navLines:before,
+  .navLines:after {
+    width: var(--button-size);
+  }
+}
+
+.linesButton:hover .navLines:before {
+  top: -2px;
+}
+.linesButton:hover .navLines::after {
+  top: 2px;
+}
+
+.linesButton.x2 .navLines {
+  transition: background 0.3s 0.5s ease;
+}
+
+.linesButton.x2 .navLines:before,
+.linesButton.x2 .navLines:after {
+  /* set transform origin */
+  transform-origin: 50% 50%;
+  transition: top 0.3s 0.6s ease, -webkit-transform 0.3s ease;
+  transition: top 0.3s 0.6s ease, transform 0.3s ease;
+}
+
+.linesButton.x2.close .navLines {
+  transition: background 0.3s 0s ease;
+  background: transparent;
+}
+
+.linesButton.x2.close .navLines:before,
+.linesButton.x2.close .navLines:after {
+  /* delay the formation of the x till the minus is formed */
+  transition: top 0.3s ease, -webkit-transform 0.3s 0.5s ease;
+  transition: top 0.3s ease, transform 0.3s 0.5s ease;
+  top: -2px;
+}
+.linesButton.x2.close .navLines:before {
+  transform: rotate3d(0, 0, 1, 45deg);
+}
+.linesButton.x2.close .navLines:after {
+  transform: rotate3d(0, 0, 1, -45deg);
+}

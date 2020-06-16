@@ -1,0 +1,21 @@
+# Site navigation links
+
+- title: Home
+  url: /
+  excerpt: "Go back to main page"
+  image: once-upon-a-time.jpg
+
+- title: Articles
+  url: /articles/
+  excerpt: "Posts on tech, travel & life in general!"
+  image: joao-silas.jpg
+
+- title: Portfolio
+  url: /portfolio/
+  excerpt: "Stuff I've done over the years"
+  image: office.jpg
+
+- title: About Me
+  url: /about/
+  excerpt: "It's all about moi :)"
+  image: about-me.jpg
