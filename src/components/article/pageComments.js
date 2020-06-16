@@ -9,9 +9,11 @@ import stylesCommentForm from '../../styles/pageCommentForm.module.css';
 
 /**
  * 'Comment Reply' to each comment.
- * This script moves the Add Comment section to the position below the appropriate comment.
- * Modified from Wordpress https://core.svn.wordpress.org/trunk/wp-includes/js/comment-reply.js
- * Released under the GNU General Public License - https://wordpress.org/about/gpl/
+ * This script moves the Add Comment section to the position
+ * below the appropriate comment. Modified from Wordpress:
+ * https://core.svn.wordpress.org/trunk/wp-includes/js/comment-reply.js
+ * Released under the GNU General Public License -
+ * https://wordpress.org/about/gpl/
  */
 const addComment = {
   moveForm(commId, parentId, respondId, postId) {
