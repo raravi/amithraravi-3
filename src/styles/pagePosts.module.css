@@ -10,17 +10,13 @@
 .thGrid {
   margin: 0;
   padding: 0;
-}
-
-.thGrid::after {
-  content: "";
-  display: block;
-  clear: both;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 .thGrid li {
   list-style: none;
-  float: left;
   width: 100%;
   padding: 8px;
   margin-bottom: 0;
