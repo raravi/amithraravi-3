@@ -69,6 +69,7 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
+        <script async src='https://www.google.com/recaptcha/api.js?render=6Ld267wUAAAAAI_fRatpssUObDichF88iycOGqX9' />
       </body>
     </html>
   );

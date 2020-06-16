@@ -1,5 +1,5 @@
 module.exports = {
-  url: 'http://localhost:8000',
+  url: 'http://localhost:5000',
   title: 'Amith Raravi',
   description: 'Reader. Coder. Play a bit of chess, a movie here, a road-trip there :)',
   author: '@amith_raravi',

@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-/* global document, fetch, FormData */
+/* global document, fetch, FormData, grecaptcha */
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from '../../styles/pageCommentForm.module.css';
@@ -26,42 +26,50 @@ const PageCommentForm = ({ path, siteUrl }) => {
         form.classList.add('disabled');
         document.querySelector('#comment-form-submit').textContent = 'Loading...';
 
-        const method = form.getAttribute('method');
-        const url = form.getAttribute('action');
-        const data = new URLSearchParams(Array.from(new FormData(form))).toString();
-        const contentType = 'application/x-www-form-urlencoded';
+        grecaptcha.ready(() => {
+          grecaptcha
+            .execute('6Ld267wUAAAAAI_fRatpssUObDichF88iycOGqX9', {
+              action: 'addcomment',
+            })
+            .then((token) => {
+              document.querySelector('#comment-token').setAttribute('value', token);
+              const method = form.getAttribute('method');
+              const url = form.getAttribute('action');
+              const data = new URLSearchParams(Array.from(new FormData(form))).toString();
+              const contentType = 'application/x-www-form-urlencoded';
 
-        fetch(url, {
-          method,
-          body: data,
-          headers: {
-            'Content-Type': contentType,
-          },
-        })
-          .then(() => {
-            document
-              .querySelector('#comment-form-submit')
-              .textContent = 'Submitted';
-            const noticeElement = document.querySelector(`#${styles.commentForm} .js-notice`);
-            noticeElement.classList.remove('notice--danger');
-            noticeElement.classList.add('notice--success');
-            showAlert(
-              '<strong>Thank you!</strong> Your comment will show up here once it has been approved by the moderator.',
-            );
-          })
-          .catch(() => {
-            document
-              .querySelector('#comment-form-submit')
-              .textContent = 'Submit Comment';
-            const noticeElement = document.querySelector(`#${styles.commentForm} .js-notice`);
-            noticeElement.classList.remove('notice--success');
-            noticeElement.classList.add('notice--danger');
-            showAlert(
-              '<strong>Sorry, there was an error with your submission.</strong> Please make sure all required fields have been completed and try again.',
-            );
-            form.classList.remove('disabled');
-          });
-
+              fetch(url, {
+                method,
+                body: data,
+                headers: {
+                  'Content-Type': contentType,
+                },
+              })
+                .then(() => {
+                  document
+                    .querySelector('#comment-form-submit')
+                    .textContent = 'Submitted';
+                  const noticeElement = document.querySelector(`#${styles.commentForm} .js-notice`);
+                  noticeElement.classList.remove('notice--danger');
+                  noticeElement.classList.add('notice--success');
+                  showAlert(
+                    '<strong>Thank you!</strong> Your comment will show up here once it has been approved by the moderator.',
+                  );
+                })
+                .catch(() => {
+                  document
+                    .querySelector('#comment-form-submit')
+                    .textContent = 'Submit Comment';
+                  const noticeElement = document.querySelector(`#${styles.commentForm} .js-notice`);
+                  noticeElement.classList.remove('notice--success');
+                  noticeElement.classList.add('notice--danger');
+                  showAlert(
+                    '<strong>Sorry, there was an error with your submission.</strong> Please make sure all required fields have been completed and try again.',
+                  );
+                  form.classList.remove('disabled');
+                });
+            });
+        });
         return false;
       });
   }, []);
