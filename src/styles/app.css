@@ -195,6 +195,7 @@
   --red-dark: hsl(0, 100%, 40%);
   --boston-red: hsl(0, 100%, 40%);
   --boston-red-light-5: hsl(0, 100%, 45%);
+  --boston-red-light-20: hsl(0, 100%, 60%);
 
   --text-color: hsl(60, 1%, 19%);
   --text-color-light-17: hsl(60, 1%, 36%);
@@ -357,6 +358,19 @@
 
 .slidingMenuButton___animation {
   animation: fade-in-menu 1s ease-out 1.5s 1 normal both;
+}
+
+.grid__deco {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.grid__deco path {
+  fill: none;
+  stroke: var(--boston-red-light-20);
+  stroke-width: 6px;
 }
 
 /**
