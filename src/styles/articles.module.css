@@ -127,7 +127,7 @@
 }
 
 .articleTile {
-  /* opacity: 0; */
+  opacity: 0;
   border-radius: 10px 10px 50px/40px 10px;
   width: 100%;
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -150,7 +150,8 @@
   display: none;
 }
 
-.articleTile a {
+.articleLink,
+.articleLink:hover {
   border-bottom: none;
 }
 

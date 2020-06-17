@@ -1,6 +1,8 @@
 /* global document */
 import React, { useEffect } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import imagesLoaded from 'imagesloaded';
+import anime from 'animejs';
 import moment from 'moment';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -73,6 +75,36 @@ const ArticlesPage = () => {
       articlesTech.forEach((article) => article.classList.add(styles.hidden));
       articlesPersonal.forEach((article) => article.classList.remove(styles.hidden));
     });
+
+    /**
+     * Animation from (https://tympanus.net/Development/GridLoadingAnimations/)
+     * Uses anime.js
+     */
+    const articleLinks = document.getElementsByClassName(styles.articleTile);
+    imagesLoaded(articleLinks, () => {
+      const animeOpts = {
+        targets: articleLinks,
+        duration: (t, i) => 1000 + i * 50,
+        easing: 'easeOutExpo',
+        delay: (t, i) => 50 + i * 20,
+        opacity: {
+          value: [0, 1],
+          duration: (t, i) => 250 + i * 50,
+          easing: 'linear',
+        },
+        translateY: [250, 0],
+      };
+
+      animeOpts.targets = [].slice.call(articleLinks).sort((a, b) => {
+        const aBounds = a.getBoundingClientRect();
+        const bBounds = b.getBoundingClientRect();
+
+        return aBounds.left - bBounds.left || aBounds.top - bBounds.top;
+      });
+
+      anime.remove(animeOpts.targets);
+      anime(animeOpts);
+    });
   }, []);
 
   return (
@@ -114,6 +146,7 @@ const ArticlesPage = () => {
               <a
                 href={`${site.siteMetadata.siteUrl}/articles/${node.frontmatter.categories[1]}/${node.fields.slug.slice(12)}`}
                 title={node.frontmatter.title}
+                className={styles.articleLink}
               >
                 <p className={styles.articleTile_postTeaser}>
                   <img
