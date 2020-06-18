@@ -2,7 +2,7 @@
   "name": "amithraravi-3",
   "private": true,
   "description": "My personal website with Gatsby!",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "author": "Amith Raravi <amith.raravi@gmail.com>",
   "dependencies": {
     "animejs": "^3.2.0",
