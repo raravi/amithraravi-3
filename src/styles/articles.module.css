@@ -126,6 +126,46 @@
   justify-content: space-around;
 }
 
+.articlesTilesGrid article.shown {
+  opacity: 1;
+}
+
+/* Effect 6: flip (based on http://lab.hakim.se/scroll-effects/ by @hakimel) */
+.articlesTilesGrid.effect6 {
+  -webkit-perspective: 1300px;
+  perspective: 1300px;
+}
+
+.articlesTilesGrid.effect6 article.animate {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+  -webkit-transform: rotateX(-80deg);
+  transform: rotateX(-80deg);
+  -webkit-animation: flip 0.8s ease-in-out forwards;
+  animation: flip 0.8s ease-in-out forwards;
+}
+
+@-webkit-keyframes flip {
+  0% {
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes flip {
+  0% {
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
 .articleTile {
   opacity: 0;
   border-radius: 10px 10px 50px/40px 10px;

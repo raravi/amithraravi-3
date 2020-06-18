@@ -1,9 +1,8 @@
 /* global document */
 import React, { useEffect } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import imagesLoaded from 'imagesloaded';
-import anime from 'animejs';
 import moment from 'moment';
+import AnimOnScroll from '../components/animOnScroll';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import styles from '../styles/articles.module.css';
@@ -54,56 +53,72 @@ const ArticlesPage = () => {
     const articlesAll = document.querySelectorAll(`.${styles.col}`);
     const articlesTech = document.querySelectorAll('.tech');
     const articlesPersonal = document.querySelectorAll('.personal');
+    const articleTiles = document.querySelectorAll(`.${styles.articleTile}`);
+    const articleTilesGrid = document.querySelector(`.${styles.articlesTilesGrid}`);
+    const tileGrid = `.${styles.articlesTilesGrid}`;
 
     buttonAll.addEventListener('click', () => {
       buttonAll.classList.add(styles.isChecked);
       buttonTech.classList.remove(`${styles.isChecked}`);
       buttonPersonal.classList.remove(`${styles.isChecked}`);
+      articleTiles.forEach((articleTile) => {
+        articleTile.classList.remove(styles.shown);
+        articleTile.classList.remove(styles.animate);
+        articleTile.removeAttribute('style');
+      });
+      articleTilesGrid.removeAttribute('style');
       articlesAll.forEach((article) => article.classList.remove(styles.hidden));
+      // eslint-disable-next-line no-new
+      new AnimOnScroll(document.querySelector(tileGrid), tileGrid, {
+        minDuration: 0.4,
+        maxDuration: 0.7,
+        viewportFactor: 0.1,
+      });
     });
     buttonTech.addEventListener('click', () => {
       buttonAll.classList.remove(`${styles.isChecked}`);
       buttonTech.classList.add(`${styles.isChecked}`);
       buttonPersonal.classList.remove(`${styles.isChecked}`);
+      articleTiles.forEach((articleTile) => {
+        articleTile.classList.remove(styles.shown);
+        articleTile.classList.remove(styles.animate);
+        articleTile.removeAttribute('style');
+      });
+      articleTilesGrid.removeAttribute('style');
       articlesTech.forEach((article) => article.classList.remove(styles.hidden));
       articlesPersonal.forEach((article) => article.classList.add(styles.hidden));
+      // eslint-disable-next-line no-new
+      new AnimOnScroll(document.querySelector(tileGrid), tileGrid, {
+        minDuration: 0.4,
+        maxDuration: 0.7,
+        viewportFactor: 0.1,
+      });
     });
     buttonPersonal.addEventListener('click', () => {
       buttonAll.classList.remove(`${styles.isChecked}`);
       buttonTech.classList.remove(`${styles.isChecked}`);
       buttonPersonal.classList.add(`${styles.isChecked}`);
+      articleTiles.forEach((articleTile) => {
+        articleTile.classList.remove(styles.shown);
+        articleTile.classList.remove(styles.animate);
+        articleTile.removeAttribute('style');
+      });
+      articleTilesGrid.removeAttribute('style');
       articlesTech.forEach((article) => article.classList.add(styles.hidden));
       articlesPersonal.forEach((article) => article.classList.remove(styles.hidden));
+      // eslint-disable-next-line no-new
+      new AnimOnScroll(document.querySelector(tileGrid), tileGrid, {
+        minDuration: 0.4,
+        maxDuration: 0.7,
+        viewportFactor: 0.1,
+      });
     });
 
-    /**
-     * Animation from (https://tympanus.net/Development/GridLoadingAnimations/)
-     * Uses anime.js
-     */
-    const articleLinks = document.getElementsByClassName(styles.articleTile);
-    imagesLoaded(articleLinks, () => {
-      const animeOpts = {
-        targets: articleLinks,
-        duration: (t, i) => 1000 + i * 50,
-        easing: 'easeOutExpo',
-        delay: (t, i) => 50 + i * 20,
-        opacity: {
-          value: [0, 1],
-          duration: (t, i) => 250 + i * 50,
-          easing: 'linear',
-        },
-        translateY: [250, 0],
-      };
-
-      animeOpts.targets = [].slice.call(articleLinks).sort((a, b) => {
-        const aBounds = a.getBoundingClientRect();
-        const bBounds = b.getBoundingClientRect();
-
-        return aBounds.left - bBounds.left || aBounds.top - bBounds.top;
-      });
-
-      anime.remove(animeOpts.targets);
-      anime(animeOpts);
+    // eslint-disable-next-line no-new
+    new AnimOnScroll(document.querySelector(tileGrid), tileGrid, {
+      minDuration: 0.4,
+      maxDuration: 0.7,
+      viewportFactor: 0.1,
     });
   }, []);
 
@@ -136,7 +151,7 @@ const ArticlesPage = () => {
         </div>
       </div>
 
-      <div className={styles.articlesTilesGrid}>
+      <div className={`${styles.articlesTilesGrid} ${styles.effect6}`}>
         {
           posts.nodes.map((node) => (
             <article
