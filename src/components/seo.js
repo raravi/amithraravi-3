@@ -1,4 +1,5 @@
 /**
+ * TODO Add more meta fields from previous site!
  * SEO component that queries for data with
  *  Gatsby's useStaticQuery React hook
  *
