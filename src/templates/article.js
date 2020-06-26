@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import SEO from '../components/seo';
 import ArticleLayout from '../components/articleLayout';
 import PageTitle from '../components/article/pageTitle';
 import PageFooter from '../components/article/pageFooter';
@@ -36,6 +37,7 @@ export default function ArticleTemplate({
 
   return (
     <ArticleLayout layout="article" category={post.frontmatter.categories[1]}>
+      <SEO title={post.frontmatter.title} />
       <article className="main-wrap">
         <PageTitle
           title={post.frontmatter.title}

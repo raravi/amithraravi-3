@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import SEO from '../components/seo';
 import MediaLayout from '../components/mediaLayout';
 import styles from '../styles/media.module.css';
 
@@ -23,6 +24,7 @@ export default function MediaTemplate({ data }) {
 
   return (
     <MediaLayout layout="media">
+      <SEO title={post.frontmatter.title} />
       <main className="main-wrap">
         {post.frontmatter.image
         && (
