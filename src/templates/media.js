@@ -1,3 +1,4 @@
+/* global window */
 /* eslint-disable react/no-danger */
 import React, { useEffect } from 'react';
 import { graphql } from 'gatsby';
@@ -11,9 +12,7 @@ export default function MediaTemplate({ data }) {
   const { siteUrl } = data.site.siteMetadata;
 
   useEffect(() => {
-    // eslint-disable-next-line no-undef
     if (window) {
-      // eslint-disable-next-line no-undef
       window.scroll({
         top: 0,
         left: 0,

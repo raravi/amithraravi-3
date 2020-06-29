@@ -1,3 +1,4 @@
+/* global window */
 /* eslint-disable react/no-danger */
 import React, { useEffect } from 'react';
 import { graphql } from 'gatsby';
@@ -24,9 +25,7 @@ export default function ArticleTemplate({
   const postCategory = post.frontmatter.categories[1];
 
   useEffect(() => {
-    // eslint-disable-next-line no-undef
     if (window) {
-      // eslint-disable-next-line no-undef
       window.scroll({
         top: 0,
         left: 0,
