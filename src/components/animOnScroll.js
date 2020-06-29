@@ -10,9 +10,9 @@
  * Copyright 2013, Codrops
  * http://www.codrops.com
  */
-import imagesLoaded from 'imagesloaded';
-import anime from 'animejs';
-import styles from '../styles/articles.module.css';
+const imagesLoaded = require('imagesloaded');
+const anime = require('animejs');
+const styles = require('../styles/articles.module.css');
 
 const docElem = window.document.documentElement;
 
@@ -34,16 +34,14 @@ function getOffset(elem) {
   let offsetLeft = 0;
   let el = elem;
   do {
-    // eslint-disable-next-line no-restricted-globals
-    if (!isNaN(el.offsetTop)) {
+    if (!Number.isNaN(el.offsetTop)) {
       offsetTop += el.offsetTop;
     }
-    // eslint-disable-next-line no-restricted-globals
-    if (!isNaN(el.offsetLeft)) {
+    if (!Number.isNaN(el.offsetLeft)) {
       offsetLeft += el.offsetLeft;
     }
-  // eslint-disable-next-line no-cond-assign
-  } while ((el = el.offsetParent));
+    el = el.offsetParent;
+  } while (el);
 
   return {
     top: offsetTop,
@@ -97,7 +95,6 @@ AnimOnScroll.prototype = {
     // triggered when we see all of the item in the viewport (100% of it)
     viewportFactor: 0,
   },
-  // eslint-disable-next-line func-names
   _init() {
     this.items = Array.prototype.slice.call(
       document.querySelectorAll(`${this.classOfEl} > article`),
@@ -144,8 +141,8 @@ AnimOnScroll.prototype = {
         return aBounds.left - bBounds.left || aBounds.top - bBounds.top;
       });
 
-      anime.remove(animeOpts.targets);
-      anime(animeOpts);
+      anime.default.remove(animeOpts.targets);
+      anime.default(animeOpts);
 
       // animate on scroll the items inside the viewport
       window.addEventListener(
@@ -191,12 +188,9 @@ AnimOnScroll.prototype = {
 
           if (self.options.minDuration && self.options.maxDuration) {
             const randDuration = `${Math.random() * (self.options.maxDuration - self.options.minDuration) + self.options.minDuration}s`;
-            // eslint-disable-next-line no-param-reassign
-            el.style.WebkitAnimationDuration = randDuration;
-            // eslint-disable-next-line no-param-reassign
-            el.style.MozAnimationDuration = randDuration;
-            // eslint-disable-next-line no-param-reassign
-            el.style.animationDuration = randDuration;
+            self.el.style.WebkitAnimationDuration = randDuration;
+            self.el.style.MozAnimationDuration = randDuration;
+            self.el.style.animationDuration = randDuration;
           }
 
           el.classList.add(styles.animate);
@@ -224,4 +218,5 @@ AnimOnScroll.prototype = {
   },
 };
 
-export default AnimOnScroll;
+// export default AnimOnScroll;
+module.exports = AnimOnScroll;

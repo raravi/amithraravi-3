@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import moment from 'moment';
-import AnimOnScroll from '../components/animOnScroll';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import styles from '../styles/articles.module.css';
@@ -47,6 +46,9 @@ const ArticlesPage = () => {
   );
 
   useEffect(() => {
+    // eslint-disable-next-line global-require
+    const AnimOnScroll = typeof window !== 'undefined' ? require('../components/animOnScroll') : null;
+
     const buttonAll = document.querySelector('.button-all');
     const buttonTech = document.querySelector('.button-tech');
     const buttonPersonal = document.querySelector('.button-personal');
