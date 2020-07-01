@@ -75,6 +75,13 @@ const Layout = ({ children }) => {
       slidingMenuButton.classList.add('slidingMenuButton___animation');
 
       window.runOnce = true;
+    } else {
+      const topMenuItems = document.querySelectorAll(`.${stylesHeader.topMenu_item}`);
+      topMenuItems[0].style.opacity = 1;
+      topMenuItems[1].style.opacity = 1;
+
+      const topMenuSiteTitle = document.querySelector(`.${stylesHeader.topMenu_siteTitle}`);
+      topMenuSiteTitle.style.opacity = 1;
     }
   }, []);
 
