@@ -50,16 +50,18 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-postcss',
       options: {
-        postCssPlugins: [
-          postcssPresetEnv({
-            importFrom: 'src/styles/app.css',
-            stage: 1,
-            features: {
-              'custom-properties': true,
-              'custom-media-queries': true,
-            },
-          }),
-        ],
+        postcssOptions: {
+          plugins: [
+            postcssPresetEnv({
+              importFrom: 'src/styles/app.css',
+              stage: 1,
+              features: {
+                'custom-properties': true,
+                'custom-media-queries': true,
+              },
+            }),
+          ],
+        },
       },
     },
     'gatsby-plugin-catch-links',
