@@ -45,10 +45,16 @@
 
 .article_shareThis {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   max-width: 485px;
   margin-bottom: 20px;
+}
+
+@media screen and (--small) {
+  .article_shareThis {
+    flex-direction: row;
+  }
 }
 
 .article_shareThis .col {
@@ -56,7 +62,7 @@
   flex-direction: column;
   align-items: stretch;
   flex: 100%;
-  max-width: 100%;
+  max-width: 240px;
 }
 
 @media screen and (--small) {
@@ -97,7 +103,7 @@
 }
 
 .article_shareThis .middle {
-  padding: 0 0;
+  padding: 8px 0;
 }
 
 @media screen and (--small) {
