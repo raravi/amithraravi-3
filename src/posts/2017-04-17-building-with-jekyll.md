@@ -12,7 +12,7 @@ teaser:     jekyll-logo-400x250.png
 
 Jekyll it is, Mr. Amith!
 
-Once I decided to use Jekyll for my static site (please read my previous [post]({{ site.url }}{% post_url 2017-03-30-an-exercise-in-static-sites %}) if you haven't yet), I needed resources to jumpstart my website development. So I started googling. For all available resources that I could find on Jekyll. This is by far the easiest way to do it.
+Once I decided to use Jekyll for my static site (please read my previous [post](/articles/tech/an-exercise-in-static-sites) if you haven't yet), I needed resources to jumpstart my website development. So I started googling. For all available resources that I could find on Jekyll. This is by far the easiest way to do it.
 
 ## Installing Jekyll
 

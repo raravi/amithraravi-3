@@ -12,7 +12,7 @@ teaser:     blog-1-400x250.jpg
 
 Why do some of us have this urge to blog?!
 
-In my previous posts, I have concentrated on the technical side of things. Right from [buying a domain]({{ site.url }}{% post_url 2017-03-09-your-own-website-part-1 %}) to [hosting your own website]({{ site.url }}{% post_url 2017-03-18-your-own-website-part-2 %}). As I’m inclined towards having complete ownership of my data, I went the ‘static site generation’ way. Which meant a Jekyll themed site built using an easy template. And that is what you’re looking at right now.
+In my previous posts, I have concentrated on the technical side of things. Right from [buying a domain](/articles/tech/your-own-website-part-1) to [hosting your own website](/articles/tech/your-own-website-part-2). As I’m inclined towards having complete ownership of my data, I went the ‘static site generation’ way. Which meant a Jekyll themed site built using an easy template. And that is what you’re looking at right now.
 
 Now I would like to talk only about blogging. The why, what and how of it i.e. the creative process of writing about ‘something’ interesting!
 

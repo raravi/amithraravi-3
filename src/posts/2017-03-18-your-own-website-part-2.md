@@ -10,7 +10,7 @@ image:      images/web-hosting.jpg
 teaser:     web-hosting-400x250.jpg
 ---
 
-Bought your own [fancy domain]({{ site.url }}{% post_url 2017-03-09-your-own-website-part-1 %}), did you?! Well that's good :)
+Bought your own [fancy domain](/articles/tech/your-own-website-part-1), did you?! Well that's good :)
 
 In this blog post, I'll take you through the process of setting up Web Hosting for your domain.
 

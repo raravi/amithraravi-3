@@ -36,4 +36,4 @@ As i progressed through the courses I realised I needed a place to get my hands 
 
 To get an idea of how Jekyll sites look, take a look at this [post](https://qrohlf.com/posts/5-best-jekyll-designs) from *qrohlf*'s site. Doesn't it blow your mind?! The look is minimalistic and yet quite stylish. And the focus is on the content. I love the way content gets highlighted in Jekyll based sites. It's about simple presentation!
 
-I will write about setting up the website with Jekyll in an [upcoming post]({{ site.url }}{% post_url 2017-04-17-building-with-jekyll %}). Thank you for being here :)
+I will write about setting up the website with Jekyll in an [upcoming post](/articles/tech/building-with-jekyll). Thank you for being here :)

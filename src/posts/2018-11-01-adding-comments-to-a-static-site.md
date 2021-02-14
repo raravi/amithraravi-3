@@ -12,7 +12,7 @@ teaser:     adding-comments-1-400x250.jpg
 
 Or, How do you add a dynamic part to your static site?
 
-If you need to know how to build a static site, please read my [previous post]({{ site.url }}{% post_url 2017-04-17-building-with-jekyll %}) here. If not, you can head below to implementing comments.
+If you need to know how to build a static site, please read my [previous post](/articles/tech/building-with-jekyll) here. If not, you can head below to implementing comments.
 
 When I created my blog in 2017, I was looking around for an easy and self maintained comments system and found [Staticman](https://staticman.net) fit my requirements to the dot. It was so easy to add it to my Jekyll site and configure correctly with minimal effort. All I needed was a Github account and a repository, which I already had.
 

@@ -10,7 +10,7 @@ image:      images/design-1.jpg
 teaser:     design-1-400x250.jpg
 ---
 
-Once you zero in on the kind of the website you [want]({{ site.url }}{% post_url 2017-03-09-your-own-website-part-1 %}), the next step obviously is designing it.
+Once you zero in on the kind of the website you [want](/articles/tech/your-own-website-part-1), the next step obviously is designing it.
 
 Figure out the pages you want on your site and what you need each of them to be. Once you have a purpose for each page, you can think of the information to be presented and the kind of layout that goes well with that. In UX design, this process is called [wireframing](https://theuxreview.co.uk/wireframes-beginners-guide/). Wireframing brings out the essentials from the initial concept. It is meant to convert the idea into concrete information, presented visually for easy understanding.
 
