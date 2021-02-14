@@ -110,8 +110,24 @@
 }
 
 /**
+ * Animation
+ */
+ @keyframes fade-in-menu {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/**
  * Sliding Menu Button
  */
+ .slidingMenuButton___animation {
+  animation: fade-in-menu 1.25s ease-out 0.75s 1 normal both;
+}
+
 .slidingMenuButton {
   position: fixed;
   transform: translateZ(0);

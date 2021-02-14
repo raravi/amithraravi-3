@@ -1,9 +1,10 @@
 /* global document */
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import styles from '../styles/slidingMenu.module.css';
 
-const SlidingMenu = () => {
+const SlidingMenu = ({ ran }) => {
   const { site, menu } = useStaticQuery(graphql`
     query {
       site {
@@ -78,13 +79,21 @@ const SlidingMenu = () => {
       <button
         type="button"
         id="js-menu-trigger"
-        className={`${styles.slidingMenuButton} ${styles.linesButton} ${styles.x2}`}
+        className={
+          ran
+            ? `${styles.slidingMenuButton} ${styles.linesButton} ${styles.x2}`
+            : `${styles.slidingMenuButton} ${styles.linesButton} ${styles.x2} ${styles.slidingMenuButton___animation}`
+        }
         aria-label="Toggle Navigation"
       >
         <span className={styles.navLines} />
       </button>
     </>
   );
+};
+
+SlidingMenu.propTypes = {
+  ran: PropTypes.node.isRequired,
 };
 
 export default SlidingMenu;

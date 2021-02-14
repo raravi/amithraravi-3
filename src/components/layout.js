@@ -1,5 +1,5 @@
 /* global document, window */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import Header from './header';
@@ -8,7 +8,6 @@ import Footer from './footer';
 import '../styles/app.css';
 import styles from '../styles/layout.module.css';
 import stylesHeader from '../styles/header.module.css';
-import stylesSlidingMenu from '../styles/slidingMenu.module.css';
 
 const Layout = ({ children }) => {
   const { site } = useStaticQuery(graphql`
@@ -20,6 +19,14 @@ const Layout = ({ children }) => {
       }
     }
   `);
+
+  const [ran, setRan] = useState(window.ranOnce);
+
+  useEffect(() => {
+    if (window.ranOnce !== true) {
+      setTimeout(() => { window.ranOnce = true; setRan(() => true); }, 2000);
+    }
+  }, []);
 
   function stickyHeading() {
     const scroll = window.pageYOffset || document.body.scrollTop;
@@ -63,29 +70,6 @@ const Layout = ({ children }) => {
   }
 
   useEffect(() => {
-    if (window.runOnce === undefined) {
-      const topMenuItems = document.querySelectorAll(`.${stylesHeader.topMenu_item}`);
-      topMenuItems[0].classList.add('topMenu_item___animation');
-      topMenuItems[1].classList.add('topMenu_item___animation');
-
-      const topMenuSiteTitle = document.querySelector(`.${stylesHeader.topMenu_siteTitle}`);
-      topMenuSiteTitle.classList.add('topMenu_siteTitle___animation');
-
-      const slidingMenuButton = document.querySelector(`.${stylesSlidingMenu.slidingMenuButton}`);
-      slidingMenuButton.classList.add('slidingMenuButton___animation');
-
-      window.runOnce = true;
-    } else {
-      const topMenuItems = document.querySelectorAll(`.${stylesHeader.topMenu_item}`);
-      topMenuItems[0].style.opacity = 1;
-      topMenuItems[1].style.opacity = 1;
-
-      const topMenuSiteTitle = document.querySelector(`.${stylesHeader.topMenu_siteTitle}`);
-      topMenuSiteTitle.style.opacity = 1;
-    }
-  }, []);
-
-  useEffect(() => {
     window.addEventListener('load', stickyHeading);
     window.addEventListener('scroll', stickyHeading);
 
@@ -97,8 +81,8 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteUrl={site.siteMetadata.siteUrl} />
-      <SlidingMenu />
+      <Header siteUrl={site.siteMetadata.siteUrl} ran={ran} />
+      <SlidingMenu ran={ran} />
       <div
         className={styles.container}
       >

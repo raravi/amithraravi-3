@@ -2,18 +2,24 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styles from '../styles/header.module.css';
 
-const Header = ({ siteUrl }) => (
+const Header = ({ siteUrl, ran }) => (
   <header className={styles.topMenu}>
     <div className="inner-wrap">
       <nav role="navigation">
         <ul className={styles.topMenu_menu}>
           <li>
-            <a href={`${siteUrl}/articles/`} className={styles.topMenu_item}>
+            <a
+              href={`${siteUrl}/articles/`}
+              className={ran ? styles.topMenu_item : `${styles.topMenu_item} ${styles.topMenu_item___animation}`}
+            >
               <span>Articles</span>
             </a>
           </li>
           <li>
-            <a href={`${siteUrl}/`} className={styles.topMenu_siteTitle}>
+            <a
+              href={`${siteUrl}/`}
+              className={ran ? styles.topMenu_siteTitle : `${styles.topMenu_siteTitle} ${styles.topMenu_siteTitle___animation}`}
+            >
               <span className={styles.firstLetter}>a</span>
               miTh
               {' '}
@@ -22,7 +28,10 @@ const Header = ({ siteUrl }) => (
             </a>
           </li>
           <li>
-            <a href={`${siteUrl}/portfolio/`} className={styles.topMenu_item}>
+            <a
+              href={`${siteUrl}/portfolio/`}
+              className={ran ? styles.topMenu_item : `${styles.topMenu_item} ${styles.topMenu_item___animation}`}
+            >
               <span>Portfolio</span>
             </a>
           </li>
@@ -36,6 +45,7 @@ const Header = ({ siteUrl }) => (
 
 Header.propTypes = {
   siteUrl: PropTypes.string,
+  ran: PropTypes.node.isRequired,
 };
 
 Header.defaultProps = {

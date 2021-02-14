@@ -325,41 +325,6 @@
   border-left: 0.25em solid #eba0a0;
 }
 
-/**
- * Animation
- */
-@keyframes slide-down {
-  0% {
-    top: -100%;
-    opacity: 0;
-  }
-  100% {
-    top: 0;
-    opacity: 1;
-  }
-}
-
-@keyframes fade-in-menu {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.topMenu_siteTitle___animation {
-  animation: slide-down 0.5s ease-out 0.75s 1 normal both;
-}
-
-.topMenu_item___animation {
-  animation: slide-down 0.5s ease-out 1.25s 1 normal both;
-}
-
-.slidingMenuButton___animation {
-  animation: fade-in-menu 1s ease-out 1.5s 1 normal both;
-}
-
 .grid__deco {
   position: absolute;
   top: 0;
