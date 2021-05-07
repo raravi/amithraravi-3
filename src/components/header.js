@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styles from '../styles/header.module.css';
+import * as styles from '../styles/header.module.css';
 
 const Header = ({ siteUrl, ran }) => (
   <header className={styles.topMenu}>

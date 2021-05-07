@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Layout from './layout';
 import Sidebar from './sidebar';
-import styles from '../styles/gridLayout.module.css';
+import * as styles from '../styles/gridLayout.module.css';
 
 const GridLayout = ({ children, layout, category }) => (
   <Layout>

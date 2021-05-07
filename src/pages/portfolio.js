@@ -5,7 +5,7 @@ import imagesLoaded from 'imagesloaded';
 import anime from 'animejs';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import styles from '../styles/portfolio.module.css';
+import * as styles from '../styles/portfolio.module.css';
 
 const PortfolioPage = () => {
   const { site, portfolio } = useStaticQuery(

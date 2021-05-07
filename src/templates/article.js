@@ -9,7 +9,7 @@ import PageTitle from '../components/article/pageTitle';
 import PageFooter from '../components/article/pageFooter';
 import PagePosts from '../components/article/pagePosts';
 import PageComments from '../components/article/pageComments';
-import styles from '../styles/article.module.css';
+import * as styles from '../styles/article.module.css';
 
 export default function ArticleTemplate({
   path,

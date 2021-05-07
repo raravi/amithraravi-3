@@ -5,7 +5,7 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import SEO from '../components/seo';
 import MediaLayout from '../components/mediaLayout';
-import styles from '../styles/media.module.css';
+import * as styles from '../styles/media.module.css';
 
 export default function MediaTemplate({ data }) {
   const post = data.markdownRemark;
