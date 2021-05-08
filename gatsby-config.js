@@ -78,7 +78,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
-    'gatsby-remark-source-name',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
