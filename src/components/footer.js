@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '../styles/footer.module.css';
+import * as styles from '../styles/footer.module.css';
 
 const Footer = ({ siteUrl }) => (
   <footer role="contentinfo" className={styles.siteFooter}>

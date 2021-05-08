@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '../../styles/pagePosts.module.css';
+import * as styles from '../../styles/pagePosts.module.css';
 
 const PagePosts = ({ posts, siteUrl, postCategory }) => (
   <div className={styles.article_archiveWrap}>

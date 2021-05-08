@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
-import styles from '../styles/slidingMenu.module.css';
+import * as styles from '../styles/slidingMenu.module.css';
 
 const SlidingMenu = ({ ran }) => {
   const { site, menu } = useStaticQuery(graphql`

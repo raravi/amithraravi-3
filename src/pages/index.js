@@ -3,7 +3,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import styles from '../styles/index.module.css';
+import * as styles from '../styles/index.module.css';
 
 const IndexPage = () => {
   const { site, contentgrid } = useStaticQuery(

@@ -2,7 +2,7 @@
 /* global document, fetch, FormData, grecaptcha */
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import styles from '../../styles/pageCommentForm.module.css';
+import * as styles from '../../styles/pageCommentForm.module.css';
 
 const PageCommentForm = ({ path, siteUrl }) => {
   const words = path.split('/');

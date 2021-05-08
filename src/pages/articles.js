@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import moment from 'moment';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import styles from '../styles/articles.module.css';
+import * as styles from '../styles/articles.module.css';
 
 const ArticlesPage = () => {
   const { site, posts } = useStaticQuery(

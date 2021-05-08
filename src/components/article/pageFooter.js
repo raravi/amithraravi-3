@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '../../styles/pageFooter.module.css';
+import * as styles from '../../styles/pageFooter.module.css';
 
 const PageFooter = ({
   avatar, name, web, bio, title, siteUrl, path, twitter,

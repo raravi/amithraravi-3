@@ -15,6 +15,13 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       name: 'slug',
       value: slug,
     });
+
+    const fileNode = getNode(node.parent);
+    createNodeField({
+      node,
+      name: 'sourceName',
+      value: fileNode.sourceInstanceName,
+    });
   }
 };
 

@@ -3,9 +3,9 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import PageComment from './pageComment';
 import PageCommentForm from './pageCommentForm';
-import styles from '../../styles/pageComments.module.css';
-import stylesComment from '../../styles/pageComment.module.css';
-import stylesCommentForm from '../../styles/pageCommentForm.module.css';
+import * as styles from '../../styles/pageComments.module.css';
+import * as stylesComment from '../../styles/pageComment.module.css';
+import * as stylesCommentForm from '../../styles/pageCommentForm.module.css';
 
 /**
  * 'Comment Reply' to each comment.

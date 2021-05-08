@@ -6,8 +6,8 @@ import Header from './header';
 import SlidingMenu from './slidingMenu';
 import Footer from './footer';
 import '../styles/app.css';
-import styles from '../styles/layout.module.css';
-import stylesHeader from '../styles/header.module.css';
+import * as styles from '../styles/layout.module.css';
+import * as stylesHeader from '../styles/header.module.css';
 
 const Layout = ({ children }) => {
   const { site } = useStaticQuery(graphql`

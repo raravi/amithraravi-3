@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import styles from '../../styles/pageComment.module.css';
+import * as styles from '../../styles/pageComment.module.css';
 
 const PageComment = ({
   index,

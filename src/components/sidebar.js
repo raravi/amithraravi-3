@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import styles from '../styles/sidebar.module.css';
+import * as styles from '../styles/sidebar.module.css';
 
 const Sidebar = ({ layout, category }) => {
   const { sidePostsTech, sidePostsPersonal, site } = useStaticQuery(

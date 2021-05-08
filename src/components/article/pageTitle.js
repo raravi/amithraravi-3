@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import styles from '../../styles/pageTitle.module.css';
+import * as styles from '../../styles/pageTitle.module.css';
 
 const PageTitle = ({ title, date, datePublished }) => (
   <>
