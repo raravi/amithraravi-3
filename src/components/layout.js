@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
     }
   `);
 
-  const [ran, setRan] = useState(window.ranOnce);
+  const [ran, setRan] = useState(typeof window !== 'undefined' ? window.ranOnce : false);
 
   useEffect(() => {
     if (window.ranOnce !== true) {
