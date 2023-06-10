@@ -6,7 +6,7 @@
   "author": "Amith Raravi <amith.raravi@gmail.com>",
   "dependencies": {
     "animejs": "^3.2.1",
-    "gatsby": "^4.1.0",
+    "gatsby": "^4.25.7",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-catch-links": "^4.1.0",
     "gatsby-plugin-manifest": "^4.1.0",
